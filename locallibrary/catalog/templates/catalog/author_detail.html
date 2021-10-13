@@ -1,0 +1,29 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<h1>Author Lastname: {{ author.last_name }}</h1>
+
+<p><strong>Author:</strong> <a href="">{{ author.last_name }}{{ author.first_name }}</a></p>
+<p><strong>Birth:</strong> {{ author.date_of_birth }}</p>
+<p><strong>Died:</strong> {{ author.date_of_death }}</p>
+
+<div style="margin-left:20px;margin-top:20px">
+    <h4>Books</h4>
+    <!--
+        book.bookinstance_set.all()는 Django에 의해 만들어진 함수
+        Book과 관련된 BookInstance 레코드 집합을 반환한다.
+        이 메소드는 관계의 한쪽("one")에만 ForeignKey 필드를 선언했기 때문에 필요하다.
+        다른 ("many") 모델에서 아무것도 선언하지 않았기 때문에 관련 레코드 집합을 가져올 필드가 없다.
+        이를 해결하기 위해, Django는 "reverse lookup"이라는 함수를 만들었다.
+        이 함수의 이름은 ForeignKey가 선언되어있는 모델의 이름을 소문자고 만들고, 그 뒤에 _set을 붙이면 된다.
+        따라서 Book에서 만든 함수는 bookinstance_set()가 된다.
+    -->
+    {% for copy in author.book_set.all %}
+    <hr>
+    <p class="{% if copy.status == 'a' %}text-success{% elif copy.status == 'm' %}text-danger{% else %}text-warning{% endif %}">
+        {{ copy.get_status_display }}</p>
+    <p><strong><a href="{% url 'book-detail' copy.id %}"> {{ copy.title }} </a></strong> ({{ copy.id }})</p>
+    <p class="text-muted">{{ copy.summary }}</p>
+    {% endfor %}
+</div>
+{% endblock %}
