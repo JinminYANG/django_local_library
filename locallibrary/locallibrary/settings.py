@@ -49,6 +49,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',         # 요청 전반에 걸친 세션 관리
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -140,3 +141,26 @@ LOGIN_REDIRECT_URL = '/catalog'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 ACCOUNT_EMAIL_VERIFICATION = 'none'
+
+
+# Heroku: Update database configuration from $DATABASE_URL.
+import dj_database_url
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
+# 개발 컴퓨터에 DATABY_URL 환경 변수가 설정되지 않기 때문에 개발 중에도 SQLite를 계속 사용할 것입니다.
+# conn_max_age=500 값을 사용하면 연결이 지속되므로 모든 요청 주기에서 연결을 재생성하는 것보다 훨씬 효율적입니다,
+# 그러나 이것은 선택 사항이며 필요한 경우 제거할 수 있습니다.
+
+
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/3.1/howto/static-files/
+
+# collectstatic이 배포를 위해 정적 파일을 수집하는 디렉터리의 절대 경로입니다.
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
+# 정적 파일을 참조할 때 사용할 URL입니다.
+STATIC_URL = '/static/'
+
+# 정적 파일 서비스를 단순화
+# https://warehouse.python.org/project/whitenoise/
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
