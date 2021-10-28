@@ -1,0 +1,219 @@
+@import url(base_generic.css);
+:root {
+    --action_live-text-main: #333333;
+    --action_live-text-sub: #606060;
+    --action_live-text-third: #4D4D4D;
+    --action_live-text-fourth: #707070;
+    --action_live-text-fifth: #666666;
+    --action_live-text-sixth: #999999;
+    --clicked: #FE7926;
+    --div-bg: #F2F2F2;
+    --chatting-input-bg: #B3B3B3;
+}
+
+.contents {}
+
+.streaming__contents {}
+
+
+/* streaming */
+
+.streaming {}
+
+.streaming__item {}
+
+.streaming__item__img {
+    width: 100%;
+}
+
+.streaming__info {}
+
+.streaming__info__icon {
+    width: 73px;
+}
+
+.streaming__header {}
+
+.streaming__header__title {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--action_live-text-main);
+}
+
+.streaming__header__gap {
+    width: 2px;
+    height: 16px;
+    background-color: var(--action_live-text-main);
+}
+
+.streaming__header__league {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--action_live-text-main);
+}
+
+.streaming__info__sub {
+    font-size: 14px;
+    color: var(--action_live-text-sub);
+}
+
+.streaming__info__sub__today {}
+
+.streaming__info__sub__gap {
+    width: 1px;
+    height: 12px;
+    background-color: var(--action_live-text-sub);
+}
+
+.streaming__info__sub__stadium {}
+
+.streaming__info__sub__start {}
+
+.streaming__etc {}
+
+.streaming__etc__views {
+    font-size: 14px;
+    vertical-align: middle;
+    color: var(--clicked);
+}
+
+.streaming__etc__views__img {
+    width: 18px;
+}
+
+.streaming__etc__views__text {}
+
+.streaming__etc__time {
+    vertical-align: middle;
+    font-size: 14px;
+}
+
+.streaming__bottom {
+    color: var(--action_live-text-fourth);
+}
+
+.streaming__bottom__img {
+    width: 20px;
+}
+
+.streaming__bottom__like {
+    vertical-align: middle;
+}
+
+.streaming__bottom__like__text {
+    font-size: 12px;
+}
+
+.streaming__bottom__share {
+    vertical-align: middle;
+}
+
+.streaming__bottom__share__text {
+    font-size: 12px;
+}
+
+.streaming__bottom__add_to_playlist {
+    vertical-align: middle;
+}
+
+.streaming__bottom__add_to_playlist__text {
+    font-size: 12px;
+}
+
+
+/* chatting */
+
+.chatting {
+    background-color: var(--div-bg);
+}
+
+.chatting__header {
+    /* vertical-align: super; */
+}
+
+.chatting__header__circle {
+    /* vertical-align: super; */
+    width: 12px;
+}
+
+.chatting__title {
+    font-size: 16px;
+    color: var(--action_live-text-main);
+}
+
+.chatting__contents {
+    background-color: var(--white);
+}
+
+.chatting__list {
+    width: 90%;
+}
+
+.chatting__wrap {}
+
+.chatting__user__icon {
+    width: 50px;
+    vertical-align: top;
+}
+
+.chatting__user__id {
+    font-size: 14px;
+    color: var(--action_live-text-sub);
+    vertical-align: top;
+}
+
+.chatting__box {
+    color: var(--action_live-text-third);
+    background-color: #E6E2FD;
+    vertical-align: top;
+    border-radius: 10px;
+}
+
+.chatting__box__01 {
+    border-radius: 0 10px 10px 10px;
+}
+
+.chatting__user__text {}
+
+.chatting__my__wrap {
+    text-align: right;
+}
+
+.chatting__my__icon {}
+
+.chatting__my__box {
+    background-color: #333FFA;
+    color: var(--white);
+}
+
+.chatting__my__text {}
+
+.chatting__input {
+    position: relative;
+}
+
+.chatting__input__text {
+    position: relative;
+    left: 5%;
+    width: 80%;
+    height: 50px;
+    border-radius: 15px;
+    border: none;
+    background-color: var(--chatting-input-bg);
+}
+
+.chatting__input__text__emoji {
+    position: absolute;
+    top: 10px;
+    left: 80%;
+    width: 30px;
+}
+
+.chatting__input__registration {
+    position: absolute;
+    left: 90%;
+}
+
+.chatting__input__registration__img {
+    width: 50px;
+}

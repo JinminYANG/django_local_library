@@ -1,0 +1,349 @@
+:root {
+    --top-gnb-bg: #ededed;
+    --font-color-main: #666666;
+    --font-color-sub: #808080;
+    --font-color-third: #999999;
+    --highlight-title-color: #333333;
+    --hightlight-box-gap-color: #b3b3b3;
+    --schedule-win-color: #4d4d4d;
+    --record-first: #fbb03b;
+    --record-second: #cccccc;
+    --record-third: #c69c6d;
+    --white: #ffffff;
+    --black: #000000;
+}
+
+* {
+    font-family: "Noto Sans KR", sans-serif;
+}
+
+.border-radius {
+    border-radius: 26.785px;
+}
+
+.shadow {
+    /* offset-x | offset-y | blur-radius | spread-radius | color */
+    box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.37) !important;
+}
+
+
+/* top__gnb */
+
+.top__gnb {
+    height: 40px;
+    font-size: 14px;
+    color: var(--font-color-main);
+    background-color: var(--top-gnb-bg);
+}
+
+.top__gnb__wrap {}
+
+.top__gnb__list {}
+
+.top__gnb__item {
+    padding: 0 !important;
+}
+
+.top__gnb__item__gap {
+    display: inline-block;
+    width: 1px;
+    height: 12px;
+    background-color: var(--font-color-main);
+}
+
+.top__gnb__item__link {
+    padding: 0 !important;
+}
+
+
+/* header (gnb) */
+
+.header {
+    height: auto;
+    font-weight: bold;
+    background-color: var(--white);
+    border-radius: 0 0 26.785px 26.785px;
+}
+
+.gnb {
+    z-index: 10;
+}
+
+.gnb__logo {}
+
+.gnb__logo__img {
+    width: 151.4px;
+}
+
+.gnb__toggler {}
+
+.gnb__toggler__icon {}
+
+.gnb__wrap {}
+
+.gnb__list {
+    gap: 0 30px;
+}
+
+.gnb__item {
+    font-size: 18px;
+    color: var(--font-color-main);
+}
+
+.gnb__item__link {}
+
+
+/* main */
+
+.main {}
+
+
+/* container */
+
+.container {
+    width: 1200px;
+    max-width: 1200px;
+}
+
+
+/* footer */
+
+.footer {
+    margin-top: 100px;
+}
+
+.fnb__list {
+    height: 90px;
+    font-size: 18px;
+    color: var(--font-color-sub);
+}
+
+.fnb__item__link {
+    color: var(--font-color-sub);
+}
+
+.company__info {
+    height: 90px;
+    font-size: 14px;
+    color: var(--font-color-third);
+}
+
+.company__info__gap {
+    display: inline-block;
+    width: 1px;
+    height: 12px;
+    background-color: var(--font-color-third);
+}
+
+
+/* 반응형 */
+
+@media screen and (max-width: 1200px) {
+    .gnb__logo__img {
+        width: 120px;
+    }
+    .gnb__list {
+        gap: 0 10px;
+    }
+    .container {
+        width: 900px;
+    }
+    .liveplay {
+        perspective: 450px;
+    }
+    .liveplay__item {
+        width: 67%;
+    }
+    .highlight__contents {
+        gap: 67.3px 4%;
+    }
+    .highlight__item {
+        flex: 0 0 48%;
+    }
+    .schedule__home__title,
+    .schedule__away__title,
+    .schedule__home__pitcher,
+    .schedule__away__pitcher {
+        display: none;
+    }
+    .schedule__info__box {
+        padding: 0 0.5rem !important;
+    }
+    .record__kbo__tr__title {
+        white-space: nowrap;
+        overflow: hidden;
+    }
+    .schedule__home__wrap,
+    .schedule__away__wrap {
+        justify-content: center !important;
+    }
+    .schedule__home__score {
+        padding-right: 20px;
+        padding-left: 0px;
+    }
+    .schedule__away__score {
+        padding-right: 0px;
+        padding-left: 20px;
+    }
+}
+
+@media screen and (max-width: 976px) {
+    .container {
+        width: 90%;
+    }
+    .liveplay {
+        perspective: 400px;
+    }
+    .liveplay__item {
+        width: 603px;
+    }
+    .highlight__item {
+        flex: 0 0 100%;
+        width: 80% !important;
+    }
+    .highlight__item__wrap {
+        width: 100% !important;
+    }
+    .highlight__item__img {
+        width: 100% !important;
+    }
+    .schedule__and__record {
+        gap: 0;
+    }
+    .schedule__and__record .col {
+        flex: 0 0 100%;
+    }
+    .schedule__home__title,
+    .schedule__away__title,
+    .schedule__home__pitcher,
+    .schedule__away__pitcher {
+        display: block;
+    }
+    .schedule__info__box {
+        padding: 0 3rem !important;
+    }
+    .schedule__home__wrap {
+        justify-content: right !important;
+    }
+    .schedule__away__wrap {
+        justify-content: left !important;
+    }
+    .schedule__home__title,
+    .schedule__away__title {
+        font-size: 20px;
+    }
+    .schedule__home__pitcher,
+    .schedule__away__pitcher {
+        font-size: 14px;
+    }
+    .record__kbo__tr__title {
+        width: 12%;
+    }
+    .fnb__list {
+        width: 70% !important;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+    .liveplay {
+        height: 280px;
+        perspective: 400px;
+    }
+    .liveplay__item {
+        width: 450px;
+        height: 250px;
+    }
+    .highlight__item {
+        flex: 0 0 100%;
+        width: 80% !important;
+    }
+    .highlight__item__wrap {
+        width: 100% !important;
+    }
+    .highlight__item__img {
+        width: 100% !important;
+    }
+    .schedule__info__box {
+        padding: 0 1.5rem !important;
+    }
+    .schedule__home__pitcher,
+    .schedule__away__pitcher {
+        display: none;
+    }
+    .fnb__list {
+        width: 90% !important;
+    }
+    .company__info {
+        width: 90% !important;
+        margin-top: 30px !important;
+    }
+    .company__title {
+        text-align: center !important;
+    }
+    .company__info__gap {
+        display: none;
+    }
+    .company__ceo {
+        text-align: center !important;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .container {
+        width: 90%;
+    }
+    .liveplay {
+        height: 195px;
+        perspective: 350px;
+    }
+    .liveplay__item {
+        width: 350px;
+        height: 195px;
+    }
+    .liveplay__item__overlay__box {
+        bottom: 1.5rem;
+    }
+    .liveplay__item__overlay__title {
+        font-size: 16px;
+    }
+    .liveplay__item__overlay__sub {
+        font-size: 12px;
+    }
+    .highlight__item {
+        width: 100% !important;
+    }
+    .highlight__item__wrap {
+        width: 100% !important;
+    }
+    .highlight__item__img {
+        width: 100% !important;
+    }
+    .schedule__home__title,
+    .schedule__away__title,
+    .schedule__home__pitcher,
+    .schedule__away__pitcher {
+        display: none;
+    }
+    .schedule__info__box {
+        padding: 0 0.5rem !important;
+    }
+    .record__kbo__tr__title {
+        white-space: nowrap;
+        overflow: hidden;
+    }
+    .schedule__home__wrap,
+    .schedule__away__wrap {
+        justify-content: center !important;
+    }
+    .schedule__home__score {
+        padding-right: 20px;
+        padding-left: 0px;
+    }
+    .schedule__away__score {
+        padding-right: 0px;
+        padding-left: 20px;
+    }
+}

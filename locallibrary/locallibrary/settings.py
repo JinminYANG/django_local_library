@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
+import dj_database_url
 import os
 
 from pathlib import Path
@@ -23,7 +24,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 # SECRET_KEY = 'django-insecure-u$rc)ua*(t*_!(%n3lpu@v^0s7ak-2w^^dy&j0ce+1tykibte_' # 기존의 SECRET_KEY
 # SECRET_KEY = "cg#p$g+j9tax!#a3cup@1$8obt2_+&k3q+pmu)5%asj6yjpkag" # 새로운 SECRET_KEY
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'cg#p$g+j9tax!#a3cup@1$8obt2_+&k3q+pmu)5%asj6yjpkag')
+SECRET_KEY = os.environ.get(
+    'DJANGO_SECRET_KEY', 'cg#p$g+j9tax!#a3cup@1$8obt2_+&k3q+pmu)5%asj6yjpkag')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -44,7 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',      # 세션 활성화
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'catalog.apps.CatalogConfig', 
+    'catalog.apps.CatalogConfig',
 ]
 
 MIDDLEWARE = [
@@ -53,7 +55,8 @@ MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',         # 요청 전반에 걸친 세션 관리
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',      # 세션을 사용하여 사용자를 요청과 연결합니다.
+    # 세션을 사용하여 사용자를 요청과 연결합니다.
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
@@ -77,6 +80,11 @@ TEMPLATES = [
         },
     },
 ]
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')
+]
+
 WSGI_APPLICATION = 'locallibrary.wsgi.application'
 WSGI_APPLICATION = 'locallibrary.wsgi.application'
 
@@ -125,11 +133,6 @@ USE_L10N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/3.2/howto/static-files/
-
-STATIC_URL = '/static/'
-
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
@@ -144,7 +147,6 @@ ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 
 # Heroku: Update database configuration from $DATABASE_URL.
-import dj_database_url
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
 # 개발 컴퓨터에 DATABY_URL 환경 변수가 설정되지 않기 때문에 개발 중에도 SQLite를 계속 사용할 것입니다.
@@ -157,6 +159,7 @@ DATABASES['default'].update(db_from_env)
 
 # collectstatic이 배포를 위해 정적 파일을 수집하는 디렉터리의 절대 경로입니다.
 STATIC_ROOT = BASE_DIR / 'staticfiles'
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # 정적 파일을 참조할 때 사용할 URL입니다.
 STATIC_URL = '/static/'

@@ -149,3 +149,19 @@ class BookUpdate(UpdateView):
 class BookDelete(DeleteView):
     model = Book
     success_url = reverse_lazy('books')
+
+
+def action_live(request):
+    # 세션 변수에서 계산한 이 보기에 대한 방문 횟수입니다.
+    num_visits = request.session.get('num_visits', 0)
+    # 'num_visits' 세션 키 값을 가져와 이전에 설정하지 않은 경우 값을 0으로 설정한다.
+    request.session['num_visits'] = num_visits + 1
+    # 요청이 수신될 때마다 값을 증가시키고 세션에 다시 저장한다. (다음 번에 사용자가 페이지를 방문할 때)
+
+    context = {
+        'num_visits': num_visits,   # 'num_visits' 변수는 템플릿에 전달된다
+    }
+
+    # 컨텍스트 변수의 데이터로 HTML 템플릿 index.html을 렌더링합니다.
+    # HTML 페이지를 생성하고 이 페이지를 응답으로서 반환하기 위해 render() 함수를 호출합니다.
+    return render(request, 'action_live.html', context=context)

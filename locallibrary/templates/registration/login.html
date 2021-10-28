@@ -2,36 +2,62 @@
 
 {% block content %}
 
-  {% if form.errors %}
-    <p>Your username and password didn't match. Please try again.</p>
-  {% endif %}
+{% if form.errors %}
+<p>Your username and password didn't match. Please try again.</p>
+{% endif %}
 
-  {% if next %}
-    {% if user.is_authenticated %}
-      <p>Your account doesn't have access to this page. To proceed,
-      please login with an account that has access.</p>
-    {% else %}
-      <p>Please login to see this page.</p>
-    {% endif %}
-  {% endif %}
+{% if next %}
+{% if user.is_authenticated %}
+<p>Your account doesn't have access to this page. To proceed,
+    please login with an account that has access.</p>
+{% else %}
+<p>Please login to see this page.</p>
+{% endif %}
+{% endif %}
 
-  <form method="post" action="{% url 'login' %}">
-    {% csrf_token %}
-    <table>
-      <tr>
-        <td>{{ form.username.label_tag }}</td>
-        <td>{{ form.username }}</td>
-      </tr>
-      <tr>
-        <td>{{ form.password.label_tag }}</td>
-        <td>{{ form.password }}</td>
-      </tr>
-    </table>
-    <input type="submit" value="login" />
-    <input type="hidden" name="next" value="{{ next }}" />
-  </form>
 
-  {# Assumes you setup the password_reset view in your URLconf #}
-  <p><a href="{% url 'password_reset' %}">Lost password?</a></p>
+<!-- 구현할 필요 없다는 피드백을 받았습니다. -->
+
+<div class="container p-5 position-relative" style="min-height: 750px">
+
+    <form method="post" action="{% url 'login' %}">
+        <h2 class="fs-4 mb-3">Login</h2>
+        <div class="mb-3 w-75">
+            <label for="exampleDropdownFormEmail2" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="exampleDropdownFormEmail2" placeholder="email@example.com">
+        </div>
+        <div class="mb-3 w-75">
+            <label for="exampleDropdownFormPassword2" class="form-label">Password</label>
+            <input type="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="password">
+        </div>
+        <div class="mb-5">
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="dropdownCheck2">
+                <label class="form-check-label" for="dropdownCheck2">Remember me</label>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary" action="">Sign in</button>
+
+        {# Assumes you setup the password_reset view in your URLconf #}
+        <a href="{% url 'password_reset' %}" class="ms-5">Lost password?</a>
+    </form>
+
+    <!--    <form method="post" action="{% url 'login' %}"
+              class="align-self-center align-items-md-center justify-content-center">
+            {% csrf_token %}
+            <table class="mx-0 p-5 table table-hover text-center">
+                <tr>
+                    <td>{{ form.username.label_tag }}</td>
+                    <td>{{ form.username }}</td>
+                </tr>
+                <tr>
+                    <td>{{ form.password.label_tag }}</td>
+                    <td>{{ form.password }}</td>
+                </tr>
+            </table>
+            <input type="submit" value="login"/>
+            <input type="hidden" name="next" value="{{ next }}"/>
+        </form>-->
+</div>
 
 {% endblock %}

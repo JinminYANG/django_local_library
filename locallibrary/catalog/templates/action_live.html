@@ -1,0 +1,250 @@
+{% extends "base_generic.html"%} 
+{% load static %} 
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/action_live.css' %}" /> 
+{% endblock css %} 
+
+{% block content %}
+
+<div class="container container-md container-sm p-0 pt-4">
+    <div class="row contents">
+
+        <div class="streaming_and_chatting col-8 p-0">
+
+            <article class="streaming border-radius shadow">
+
+                <div class="streaming__item m-auto border-radius">
+                    <img src="{% static 'images\action_live\sec1_99.png' %}" class="streaming__item__img border-radius" />
+                </div>
+
+                <div class="streaming__texts p-3">
+                    <div class="streaming__info d-inline-block">
+                        <img src="{% static 'images\action_live\sec1_01.png' %}" alt="streaming__info__icon" class="streaming__info__icon" />
+
+                        <div class="streaming__header mt-3">
+                            <h2 class="streaming__header__title d-inline-block">KT vs 한화 (KT wiz vs HanHwa eagles)</h2>
+                            <span class="streaming__header__gap d-inline-block mx-1"></span>
+                            <span class="streaming__header__league">KBO 리그
+                        </div>
+
+                        <div class="streaming__info__sub mt-1">
+                            <span class="streaming__info__sub__today">2021.09.01</span>
+                            <span class="streaming__info__sub__gap d-inline-block  mx-1"></span>
+                            <span class="streaming__info__sub__stadium">한화생명이클스파크</span>
+                            <span class="streaming__info__sub__gap d-inline-block  mx-1"></span>
+                            <span class="streaming__info__sub__start">시작시간 14:10</span>
+                        </div>
+                    </div>
+
+                    <div class="streaming__etc d-inline-block float-right">
+                        <div class="streaming__etc__views d-inline-block mr-4">
+                            <img src="{% static 'images\action_live\sec1_02.png' %}" alt="streaming__etc__views__img" class="streaming__etc__views__img mr-1">
+                            <span class="streaming__etc__views__text">5,045</span>
+                        </div>
+
+                        <span class="streaming__etc__time">01:20:35</span>
+                    </div>
+
+                    <div class="streaming__bottom mt-4 ml-5">
+                        <div class="streaming__bottom__like d-inline-block mr-4">
+                            <img src="{% static 'images\action_live\sec1_03.png' %}" alt="streaming__bottom__like__img" class="streaming__bottom__img streaming__bottom__like__img mr-1">
+                            <span class="streaming__bottom__like__text">좋아요</span>
+                        </div>
+
+                        <div class="streaming__bottom__share d-inline-block mr-4">
+                            <img src="{% static 'images\action_live\sec1_05.png' %}" alt="streaming__bottom__share__img" class="streaming__bottom__img streaming__bottom__share__img mr-1">
+                            <span class="streaming__bottom__share__text">공유하기</span>
+                        </div>
+
+                        <div class="streaming__bottom__add_to_playlist d-inline-block">
+                            <img src="{% static 'images\action_live\sec1_06.png' %}" alt="streaming__bottom__add_to_playlist__img" class="streaming__bottom__img streaming__bottom__add_to_playlist__img mr-1">
+                            <span class="streaming__bottom__add_to_playlist__text">재생목록에 추가</span>
+                        </div>
+                    </div>
+                </div>
+
+
+            </article>
+
+            <div class="chatting border-radius shadow my-5">
+                <div class="chatting__header px-4 py-3">
+                    <img src="{% static 'images\action_live\title_circle.png' %}" alt="chatting__header__circle" class="chatting__header__circle header__circle">
+                    <h2 class="chatting__title d-inline-block m-0">Live Chat Room</h2>
+                </div>
+
+                <div class="chatting__contents border-radius py-4">
+
+                    <div class="chatting__list m-auto px-2">
+                        <div class="chatting__wrap chatting__wrap__01">
+                            <img src="{% static 'images\action_live\sec2_02.png' %}" alt="chatting__user__01__icon" class="chatting__user__icon chatting__user__01__icon">
+                            <h3 class="chatting__user__id d-inline-block">KTwizfan123</h3>
+                            <div class="chatting__box__wrap d-inline-block">
+                                <div class="chatting__box chatting__box__01 d-block p-2 m-1">
+                                    <span class="chatting__user__text chatting__user__01__text chatting__user__01__text__01">실시간 생중계 잘 보고 있습니다 재미있어요~!</span>
+                                </div>
+                                <div class="chatting__box chatting__box__02 d-inline-block p-2 m-1">
+                                    <span class="chatting__user__text chatting__user__01__text chatting__user__01__text__02">오늘 경기력이 대단하네요!</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="chatting__wrap chatting__wrap__02">
+                            <img src="{% static 'images\action_live\sec2_02.png' %}" alt="chatting__user__02__icon" class="chatting__user__icon chatting__user__02__icon">
+                            <h3 class="chatting__user__id d-inline-block">Actionsports7</h3>
+
+                            <div class="chatting__box__wrap d-inline-block">
+                                <div class="chatting__box chatting__box__01  p-2 m-1">
+                                    <span class="chatting__user__text chatting__user__02__text chatting__user__02__text__01">더
+                                    생생하게 와닿네요 우리팀 응원합니다^^</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="chatting__wrap chatting__wrap__03 chatting__my__wrap">
+                            <div class="chatting__box__wrap d-inline-block">
+                                <div class="chatting__box chatting__box__03 chatting__my__box  p-2 m-1">
+                                    <span class="chatting__user__text chatting__user__03__text chatting__user__03__text__01 chatting__my__text">더
+                                    생생하게 와닿네요 우리팀 응원합니다^^</span>
+                                </div>
+                            </div>
+                            <h3 class="chatting__user__id d-inline-block">Actionsports2021</h3>
+                            <img src="{% static 'images\action_live\sec2_03.png' %}" alt="chatting__user__03__icon" class="chatting__user__icon chatting__user__03__icon chatting__my__icon">
+                        </div>
+                    </div>
+
+                    <div class="chatting__input m-auto mt-3">
+                        <input type="text" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 서비스 이용에 재재를 받을 수 있습니다." class="chatting__input__text d-inline-block" />
+                        <img src="{% static 'images\action_live\sec2_09.png' %}" alt="chatting__input__text__emoji" class="chatting__input__text__emoji" />
+                        <a href="#" class="chatting__input__registration d-inline-block">
+                            <img src="{% static 'images\action_live\sec2_10.png' %}" alt="chatting__input__registration__img" class="chatting__input__registration__img" />
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="information__contents col-4 p-0">
+
+            <div class="controls p-0">
+                <div class="effects">
+                    <img src="{% static 'images\action_live\sec3_01.png' %}" alt="effects__img" class="effects__img">
+                    <span class="effects__text">효과</span>
+                </div>
+
+                <div class="prediction">
+                    <img src="{% static 'images\action_live\sec3_02.png' %}" alt="prediction__img" class="prediction__img">
+                    <span class="prediction__text">예측</span>
+                </div>
+
+                <div class="player__info">
+                    <img src="{% static 'images\action_live\sec3_03.png' %}" alt="player__info__img" class="player__info__img">
+                    <span class="player__info__text">선수정보</span>
+                </div>
+            </div>
+
+            <div class="setting p-0">
+                <div class="setting__header">
+                    <img src="{% static 'images\action_live\title_circle.png' %}" alt="setting__header__circle" class="setting__header__circle header__circle">
+                    <h2 class="setting__title">Setting</h2>
+                    <input type="radio" name="setting__on" class="setting__on">
+                    <img src="{% static 'images\action_live\sec3_07.png' %}" alt="setting__info" class="setting__info">
+                </div>
+
+                <div class="setting__contents">
+                    <div class="setting__pitching">
+                        <label for="pitching__btn" class="pitching__btn__label">투구</label>
+                        <input type="radio" name="pitching__btn" class="setting__btn pitching__btn">
+                    </div>
+                    <div class="setting__batting">
+                        <label for="batting__btn" class="batting__btn__label">타구</label>
+                        <input type="radio" name="batting__btn" class="setting__btn batting__btn">
+                    </div>
+                    <div class="setting__throw">
+                        <label for="throw__btn" class="throw__btn__label">송구</label>
+                        <input type="radio" name="throw__btn" class="setting__btn throw__btn">
+                    </div>
+                    <div class="setting__catch">
+                        <label for="catch__btn" class="catch__btn__label">포구</label>
+                        <input type="radio" name="catch__btn" class="setting__btn catch__btn">
+                    </div>
+                    <div class="setting__on_base">
+                        <label for="on_base__btn" class="on_base__btn__label">출루</label>
+                        <input type="radio" name="on_base__btn" class="setting__btn on_base__btn">
+                    </div>
+                    <div class="setting__steal">
+                        <label for="steal__btn" class="steal__btn__label">도루</label>
+                        <input type="radio" name="steal__btn" class="setting__btn steal__btn">
+                    </div>
+                    <div class="setting__judgment">
+                        <label for="judgment__btn" class="judgment__btn__label">볼 판정</label>
+                        <input type="radio" name="judgment__btn" class="setting__btn judgment__btn">
+                    </div>
+                </div>
+            </div>
+
+            <div class="real_time_player p-0">
+
+                <div class="real_time_player__header">
+                    <img src="{% static 'images\action_live\title_circle.png' %}" alt="real_time_player__header__circle" class="real_time_player__header__circle header__circle">
+                    <h2 class="real_time_player__title">Real-time Player</h2>
+                </div>
+
+                <div class="home__player">
+                    <img src="{% static 'images\action_live\sec4_01.png' %}" alt="home__player__img" class="player__img home__player__img" />
+
+                    <div class="home__player__name">
+                        <span class="home__player__name__kor">황재균</span>
+                        <span class="home__player__name__eng">Hwang Jae gyun</span>
+                    </div>
+
+                    <div class="home__player__team">
+                        <span class="home__player__team__title">KT WIZ</span>
+                        <img src="{% static 'images\action_live\sec4_03.png' %}" alt="home__player__team__img" class="player__team__img home__player__team__img" />
+                    </div>
+
+                </div>
+
+                <div class="away__player">
+                    <img src="{% static 'images\action_live\sec4_02.png' %}" alt="away__player__img" class="player__img away__player__img" />
+
+                    <div class="away__player__name">
+                        <span class="away__player__name__kor">노시환</span>
+                        <span class="away__player__name__eng">Roh Si Hwan</span>
+                    </div>
+
+                    <div class="away__player__team">
+                        <span class="away__player__team__title">한화 이글스</span>
+                        <img src="{% static 'images\action_live\sec4_04.png' %}" alt="away__player__team__img" class="player__team__img away__player__team__img" />
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="player_stats p-0">
+                <div class="player_stats__header">
+                    <img src="{% static 'images\action_live\title_circle.png' %}" alt="real_time_player__header__circle" class="real_time_player__header__circle header__circle">
+                    <h2 class="player_stats__title">Player Stats</h2>
+                </div>
+                <img src="{% static 'images\action_live\sec5_01.png' %}" alt="player_stats__player__img" class="player_stats__player__img" />
+                <img src="{% static 'images\action_live\sec5_02.png' %}" alt="player_stats__back__logo__img" class="player_stats__back__logo__img" />
+
+                <div class="player_stats__btns">
+                    <img src="{% static 'images\action_live\sec5_04.png' %}" alt="player_stats__share__img" class="player_stats__share__img">
+                    <img src="{% static 'images\action_live\sec5_05.png' %}" alt="player_stats__bookmark__img" class="player_stats__bookmark__img">
+                </div>
+
+                <div class="player_stats__info">
+                    <img src="{% static 'images\action_live\sec4_03.png' %}" alt="player_stats__team__logo__img" class="player_stats__team__logo__img">
+                    <span class="player_stats__name">황재균</span>
+                    <img src="{% static 'images\action_live\sec5_03.png' %}" alt="player_stats__number__img" class="player_stats__number__img" />
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

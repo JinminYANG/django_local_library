@@ -30,6 +30,7 @@ urlpatterns = [
 ]
 
 urlpatterns += [
+    path('', include('catalog.urls')),
     path('catalog/', include('catalog.urls')),
 ]
 

@@ -3,6 +3,7 @@ from catalog import views
 
 urlpatterns = [
     path('', views.index, name='index'),
+    path('action_live/', views.action_live, name='action_live'),
 
     path('books/', views.BookListView.as_view(), name='books'),
     # URL('books/')과 매치되는 패턴,
