@@ -13,7 +13,9 @@
 
 .contents {}
 
-.streaming__contents {}
+.streaming_and_chatting {
+    flex: 0 0 65%;
+}
 
 
 /* streaming */
@@ -127,16 +129,14 @@
     background-color: var(--div-bg);
 }
 
-.chatting__header {
-    /* vertical-align: super; */
-}
+.contents__header {}
 
-.chatting__header__circle {
-    /* vertical-align: super; */
+.contents__header__circle {
+    vertical-align: baseline;
     width: 12px;
 }
 
-.chatting__title {
+.contents__header__title {
     font-size: 16px;
     color: var(--action_live-text-main);
 }
@@ -149,71 +149,364 @@
     width: 90%;
 }
 
-.chatting__wrap {}
+.chatting__item {}
+
+.chatting__item__header {
+    vertical-align: top;
+}
 
 .chatting__user__icon {
     width: 50px;
-    vertical-align: top;
+    vertical-align: bottom;
 }
 
 .chatting__user__id {
     font-size: 14px;
     color: var(--action_live-text-sub);
     vertical-align: top;
+    margin-top: 14px;
 }
 
-.chatting__box {
+.chatting__item__box {}
+
+.chatting__user__text {
     color: var(--action_live-text-third);
     background-color: #E6E2FD;
-    vertical-align: top;
-    border-radius: 10px;
+    border-radius: 15px;
 }
 
-.chatting__box__01 {
-    border-radius: 0 10px 10px 10px;
+.chatting__user__text:first-child {
+    border-radius: 0 15px 15px 15px;
 }
 
-.chatting__user__text {}
-
-.chatting__my__wrap {
+.my__chatting__item {
+    /* float: right; */
     text-align: right;
 }
 
-.chatting__my__icon {}
+.my__chatting__item__box {}
 
-.chatting__my__box {
+.my__chatting__user__text {
     background-color: #333FFA;
-    color: var(--white);
+    border-radius: 15px;
+    color: white;
 }
 
-.chatting__my__text {}
+.my__chatting__user__text:first-child {
+    border-radius: 15px 0 15px 15px;
+}
+
+.my__chatting__item__header {
+    vertical-align: top;
+}
+
+.my__chatting__user__id {
+    font-size: 14px;
+    color: var(--action_live-text-sub);
+    vertical-align: top;
+    margin-top: 14px;
+}
 
 .chatting__input {
-    position: relative;
+    border-radius: 10px !important;
+}
+
+.chatting__input__container {
+    width: 90%;
+    background-color: #E6E6E6;
+    border-radius: 18px !important;
 }
 
 .chatting__input__text {
-    position: relative;
-    left: 5%;
-    width: 80%;
-    height: 50px;
-    border-radius: 15px;
-    border: none;
-    background-color: var(--chatting-input-bg);
+    font-size: 14px;
+    background-color: #E6E6E6;
+    border: none !important;
+    border-radius: 18px !important;
 }
 
-.chatting__input__text__emoji {
-    position: absolute;
-    top: 10px;
-    left: 80%;
-    width: 30px;
+.chatting__input__text.emoji-wysiwyg-editor {
+    padding: 18px 15px;
 }
 
-.chatting__input__registration {
-    position: absolute;
-    left: 90%;
+.emoji-picker-icon {
+    top: 14px !important;
+    font-size: 26px !important;
 }
+
+.chatting__input__registration {}
 
 .chatting__input__registration__img {
+    width: 45px;
+    vertical-align: super;
+}
+
+
+/* information_contents */
+
+.side {
+    flex: 0 0 32%;
+}
+
+
+/* controls */
+
+.controls {
+    /* height: 100%; */
+}
+
+.controls__item {
+    height: 100px;
+    border: 2px solid #E5E5E5;
+    cursor: pointer;
+}
+
+.controls__effects {}
+
+.controls__img {
+    width: 40%;
+    margin: 1rem auto 0.5rem;
+}
+
+.controls__text {
+    font-size: 14px;
+    color: var(--action_live-text-third);
+}
+
+.controls__prediction {}
+
+.prediction__img {}
+
+.prediction__text {}
+
+.controls__player_info {}
+
+.player__info__img {}
+
+.player__info__text {}
+
+
+/* side */
+
+.side__controls {}
+
+.side__item {
+    background-color: var(--div-bg);
+}
+
+
+/* setting */
+
+.setting {}
+
+.setting__header {
+    max-height: 56px;
+}
+
+.setting__header__circle {}
+
+.setting__title {}
+
+.setting__btn__example {
     width: 50px;
 }
+
+.setting__alert {
+    width: 20px;
+    cursor: pointer;
+}
+
+.setting__contents {}
+
+.setting__list {
+    background: var(--white);
+}
+
+.setting__list__left {}
+
+.setting__list__right {}
+
+.setting__item {}
+
+.setting__item__label {
+    font-size: 14px;
+    color: var(--action_live-text-fifth);
+    vertical-align: top;
+}
+
+.setting__item__btn {
+    position: relative;
+    width: 50px;
+    height: 25px;
+    appearance: none;
+    background: var(--action_live-text-sixth);
+    outline: none;
+    border-radius: 20px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+}
+
+.setting__item__btn:checked {
+    background: var(--clicked);
+}
+
+.setting__item__btn::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    top: 50%;
+    left: 3px;
+    transform: translateY(-50%);
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+}
+
+.setting__item__btn:checked::before {
+    left: 27px;
+}
+
+
+/* real_time_player */
+
+.player {}
+
+.player__header {}
+
+.player__item {
+    width: 100%;
+    height: 44.7px;
+    background: white;
+    position: relative;
+}
+
+.player__item__img {
+    position: absolute;
+    left: 40px;
+    bottom: 0;
+    width: 80px;
+}
+
+.player__item__name {
+    position: absolute;
+    top: 5px;
+    left: 120px;
+    line-height: 1;
+}
+
+.player__item__name__kor {
+    display: block;
+    color: var(--action_live-text-third);
+}
+
+.player__item__name__eng {
+    font-size: 10px;
+    color: var(--action_live-text-sixth);
+}
+
+.player__item__team {
+    position: absolute;
+    top: 8px;
+    right: 30px;
+}
+
+.player__item__team__title {
+    font-size: 12px;
+    color: var(--action_live-text-fifth);
+}
+
+.player__item__team__img {
+    width: 35px;
+}
+
+
+/* stats */
+
+.stats {
+    /* position: relative; */
+    height: 353px;
+}
+
+.stats__header {}
+
+.stats__contents {
+    position: relative;
+    width: 95%;
+    height: 300px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    overflow: auto;
+}
+
+.stats__contents::-webkit-scrollbar {
+    width: 10px;
+}
+
+.stats__contents::-webkit-scrollbar-track {
+    margin-bottom: 20px;
+}
+
+.stats__contents::-webkit-scrollbar-thumb {
+    background-color: var(--action_live-text-sixth);
+    border-radius: 10px;
+}
+
+.stats__player__img {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 80%;
+    z-index: 2;
+}
+
+.stats__back__logo__img {
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    width: 50%;
+    z-index: 1;
+}
+
+.stats__btns {}
+
+.stats__btns__share__img {
+    width: 40px;
+}
+
+.stats__btns__bookmark__img {
+    width: 40px;
+}
+
+.stats__info {
+    position: absolute;
+    left: 65%;
+    top: 70px;
+    z-index: 2;
+}
+
+.stats__info__logo__img {
+    width: 50px;
+}
+
+.stats__info__name {
+    font-size: 30px;
+    font-weight: bold;
+    color: var(--action_live-text-third);
+}
+
+.stats__info__position {}
+
+.stats__info__position__number__img {
+    width: 40px;
+}
+
+.stats__info__position__box {
+    vertical-align: middle;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.stats__info__position__box__defence {}
+
+.stats__info__position__box__attack {}
