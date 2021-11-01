@@ -35,15 +35,7 @@
     {% block header %}
     <!-- 회원정보영역 -->
     <nav class="top__gnb navbar navbar-light navbar-expand bd-subnavbar py-0 position-relative " aria-label="Secondary navigation">
-      <div
-        class="
-          top__gnb__wrap
-          container
-          d-flex
-          align-items-center
-          justify-content-end
-        "
-      >
+      <div class=" top__gnb__wrap container d-flex align-items-center justify-content-end">
         <ul class="top__gnb__list navbar-nav flex-row form-inline">
           <li class="top__gnb__item nav-item">
             <a class="top__gnb__item__link nav-link p-0" href="#">로그아웃</a>
@@ -59,7 +51,7 @@
     <!-- 네비게이션 -->
     <header class="header navbar navbar-light bg-light shadow">
       <nav class="gnb container navbar navbar-expand-lg navbar-light p-0">
-        <a class="gnb__logo navbar-brand p-0" href="#">
+        <a class="gnb__logo navbar-brand p-0" href="/">
           <img src="{% static 'images\main\images\as_logo2.png' %}" alt="logo-img" class="gnb__logo__img" />
         </a>
 
@@ -81,7 +73,7 @@
               <a class="gnb__item__link nav-link" href="#">서비스 소개</a>
             </li>
             <li class="gnb__item nav-item">
-              <a class="gnb__item__link nav-link" href="#">액션 라이브</a>
+              <a class="gnb__item__link nav-link" href="/action_live">액션 라이브</a>
             </li>
             <li class="gnb__item nav-item">
               <a class="gnb__item__link nav-link" href="#">하이라이트</a>

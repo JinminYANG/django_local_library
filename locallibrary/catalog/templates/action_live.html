@@ -70,17 +70,17 @@
 
             </article>
 
-            <div class="chatting border-radius shadow mt-5">
-                <div class="chatting__header contents__header px-4 py-3">
+            <div class="chatting border-radius shadow ">
+                <div class="chatting__header contents__header px-4">
                     <img src="{% static 'images\action_live\title_circle.png' %}" alt="chatting__header__circle" class="chatting__header__circle contents__header__circle">
                     <h2 class="chatting__title contents__header__title d-inline-block m-0 ml-2">Live Chat Room</h2>
                 </div>
 
                 <div class="chatting__contents border-radius pb-3">
+                
+                    <div class="chatting__list m-auto px-2 pt-3">
 
-                    <div class="chatting__list m-auto px-2 py-3">
-
-                        <div class="chatting__item mb-2">
+                        <div class="chatting__item mb-1">
                             <div class="chatting__item__header d-inline-block w-25">
                                 <img src="{% static 'images\action_live\sec2_02.png' %}" alt="chatting__user__01__icon" class="chatting__user__icon">
                                 <h3 class="chatting__user__id d-inline-block">KTwizfan123</h3>
@@ -88,11 +88,11 @@
 
                             <div class="chatting__item__box d-inline-block">
                                 <span class="chatting__user__text d-block p-2 px-3 m-1">실시간 생중계 잘 보고 있습니다 재미있어요~!</span>
-                                <span class="chatting__user__text d-block p-2 px-3 m-1">오늘 경기력이 대단하네요!</span>
+                                <span class="chatting__user__text d-inline-block p-2 px-3 m-1">오늘 경기력이 대단하네요!</span>
                             </div>
                         </div>
 
-                        <div class="chatting__item mb-2">
+                        <div class="chatting__item mb-1">
                             <div class="chatting__item__header d-inline-block w-25">
                                 <img src="{% static 'images\action_live\sec2_03.png' %}" alt="chatting__user__01__icon" class="chatting__user__icon">
                                 <h3 class="chatting__user__id d-inline-block">actionsports7</h3>
@@ -116,14 +116,31 @@
 
                     </div>
 
-                    <div class="chatting__input px-5">
+                    <div class="chatting__input px-5 mt-3" >
                         <p class="lead emoji-picker-container chatting__input__container d-inline-block mb-0 ">
                             <textarea type="textbox" data-emoji-input="unicode" class="form-control chatting__input__text" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 서비스 이용에 재재를 받을 수 있습니다." data-emojiable="true"></textarea>
                         </p>      
-                        <a href="#" class="chatting__input__registration d-inline-block ml-2">
+                        <a class="chatting__input__registration d-inline-block ml-2" data-toggle="modal" data-target="#chatModal">
                             <img src="{% static 'images\action_live\sec2_10.png' %}" alt="chatting__input__registration__img" class="chatting__input__registration__img" />
                         </a>
                     </div>
+
+                    <!-- Modal -->
+                    <div class="modal fade login__modal__container" id="chatModal" tabindex="-1" aria-labelledby="chatModalLabel" aria-hidden="true">
+                        <div class="modal-dialog login__modal__box modal-sm">
+                            <div class="modal-content login__modal__contents border-radius">
+                                <div class="modal-body login__modal__text pb-0 pt-2">
+                                    로그인이 필요한 <br> 서비스 입니다.
+                                </div>
+                                <div class="modal-footer login__modal__btns justify-content-center pt-0">
+                                    <button type="button" class="btn btn-secondary login__modal__yes border-radius px-2 py-1">로그인</button>
+                                    <button type="button" class="btn btn-light login__modal__no border-radius px-2 py-1" data-dismiss="modal">닫기</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>   
+
+                     <div class="modal-backdrop fade login__modal__backdrop border-radius"></div>
                 </div>
 
             </div>
@@ -148,15 +165,16 @@
                 </div>
             </div>
 
-            <div class="side__item setting border-radius shadow p-0 mt-4">
-                <div class="setting__header contents__header px-4 py-3">
+            <div class="side__item setting border-radius shadow p-0 ">
+                <div class="setting__header contents__header px-4">
                     <img src="{% static 'images\action_live\title_circle.png' %}" alt="setting__header__circle" class="setting__header__circle contents__header__circle">
                     <h2 class="setting__title contents__header__title d-inline-block m-0 ml-2 mr-3">Setting</h2>
 
                     <img src="{% static 'images\action_live\sec3_05.png' %}" alt="setting__btn__on__example" class="setting__btn__example setting__btn__on__example">
                     <img src="{% static 'images\action_live\sec3_06.png' %}" alt="setting__btn__off__example" class="setting__btn__example setting__btn__off__example">
 
-                    <img src="{% static 'images\action_live\sec3_07.png' %}" alt="setting__alert" class="setting__alert float-right mt-1">
+                    <img src="{% static 'images\action_live\sec3_07.png' %}" alt="setting__alert" class="setting__alert float-right">
+                    <img src="{% static 'images\action_live\sec3_04.png' %}" alt="setting__description" class="setting__description">
                 </div>
 
                 <div class="setting__contents">
@@ -204,7 +222,7 @@
 
             <div class="side__item player border-radius shadow p-0 mt-4">
 
-                <div class="player__header contents__header px-4 py-3">
+                <div class="player__header contents__header px-4 ">
                     <img src="{% static 'images\action_live\title_circle.png' %}" alt="player__header__circle" class="player__header__circle contents__header__circle">
                     <h2 class="player__title contents__header__title d-inline-block m-0 ml-2">Real-time Player</h2>
                 </div>
@@ -241,13 +259,15 @@
             </div>
 
             <div class="side__item stats border-radius shadow p-0 mt-4">
-                <div class="stats__header contents__header px-4 py-3">
+
+                <div class="stats__header contents__header px-4">
                     <img src="{% static 'images\action_live\title_circle.png' %}" alt="stats__header__circle" class="stats__header__circle contents__header__circle">
                     <h2 class="stats__title contents__header__title d-inline-block m-0 ml-2">Player Stats</h2>
                 </div>
 
-
                 <div class="stats__contents d-block m-auto">
+                    {% comment %} <img src="{% static 'images\action_live\sec5_08.png' %}" alt="stats__bg" class="stats__bg" /> {% endcomment %}
+
                     <img src="{% static 'images\action_live\sec5_01.png' %}" alt="stats__player__img" class="stats__player__img" />
                     <img src="{% static 'images\action_live\sec5_02.png' %}" alt="stats__back__logo__img" class="stats__back__logo__img" />
 
@@ -267,8 +287,92 @@
                             </div>
                         </div>
                     </div>
-                </div>
 
+                    <div class="stats__record m-auto">
+                        <div class="stats__record__header">
+                            <span class="stats__record__header__season px-2">2021 시즌</span>
+                            <span class="stats__record__header__title">정규 리그 기록</span>
+                        </div>
+
+                        <div class="stats__record__list row justify-content-between m-auto">
+                            <div class="stats__record__item stats__record__batting_average col-4 p-0">
+                                <span class="stats__record__item__title stats__record__batting_average__title d-block mx-2 my-1">타율</span>
+                                <span class="stats__record__item__point stats__record__batting_average__point d-block mx-2 my-1">0.314</span>
+                            </div>
+
+                            <div class="stats__record__item stats__record__games_played col-4 p-0">
+                                <span class="stats__record__item__title stats__record__games_played__title d-block mx-2 my-1">경기</span>
+                                <span class="stats__record__item__point stats__record__games_played__point d-block mx-2 my-1">78</span>
+                            </div>
+
+                            <div class="stats__record__item stats__record__plate_appearances col-4 p-0">
+                                <span class="stats__record__item__title stats__record__plate_appearances__title d-block mx-2 my-1">타석</span>
+                                <span class="stats__record__item__point stats__record__plate_appearances__point d-block mx-2 my-1">339</span>
+                            </div>
+                            
+
+                            <div class="stats__record__item stats__record__at_bats col-4 p-0">
+                                <span class="stats__record__item__title stats__record__at_bats__title d-block mx-2 my-1">타수</span>
+                                <span class="stats__record__item__point stats__record__at_bats__point d-block mx-2 my-1">303</span>
+                            </div>
+
+                            <div class="stats__record__item stats__record__runs_scored col-4 p-0">
+                                <span class="stats__record__item__title stats__record__runs_scored__title d-block mx-2 my-1">득점</span>
+                                <span class="stats__record__item__point stats__record__runs_scored__point d-block mx-2 my-1">61</span>
+                            </div>
+
+                            <div class="stats__record__item stats__record__hits col-4 p-0">
+                                <span class="stats__record__item__title stats__record__hits__title d-block mx-2 my-1">안타</span>
+                                <span class="stats__record__item__point stats__record__hits__point d-block mx-2 my-1">95</span>
+                            </div>       
+
+
+                            <div class="stats__record__item stats__record__doubles col-4 p-0">
+                                <span class="stats__record__item__title stats__record__doubles__title d-block mx-2 my-1">2루타</span>
+                                <span class="stats__record__item__point stats__record__doubles__point d-block mx-2 my-1">11</span>
+                            </div>
+
+                            <div class="stats__record__item stats__record__triples col-4 p-0">
+                                <span class="stats__record__item__title stats__record__triples__title d-block mx-2 my-1">3루타</span>
+                                <span class="stats__record__item__point stats__record__triples__point d-block mx-2 my-1">1</span>
+                            </div>
+
+                            <div class="stats__record__item stats__record__home_runs col-4 p-0">
+                                <span class="stats__record__item__title stats__record__home_runs__title d-block mx-2 my-1">홈런</span>
+                                <span class="stats__record__item__point stats__record__home_runs__point d-block mx-2 my-1">10</span>
+                            </div>                   
+
+
+                            <div class="stats__record__item stats__record__runs_batted_in col-4 p-0">
+                                <span class="stats__record__item__title stats__record__runs_batted_in__title d-block mx-2 my-1">타점</span>
+                                <span class="stats__record__item__point stats__record__runs_batted_in__point d-block mx-2 my-1">44</span>
+                            </div>
+
+                            <div class="stats__record__item stats__record__stolen_bases col-4 p-0">
+                                <span class="stats__record__item__title stats__record__stolen_bases__title d-block mx-2 my-1">도루</span>
+                                <span class="stats__record__item__point stats__record__stolen_bases__point d-block mx-2 my-1">10</span>
+                            </div>
+
+                            <div class="stats__record__item stats__record__caught_stealing col-4 p-0">
+                                <span class="stats__record__item__title stats__record__caught_stealing__title d-block mx-2 my-1">도실</span>
+                                <span class="stats__record__item__point stats__record__caught_stealing__point d-block mx-2 my-1">4</span>
+                            </div>       
+                        </div>
+                    </div>
+
+                    <div class="stats__images row m-auto row justify-content-between">
+                        <img src="{% static 'images\action_live\sec5_10.png' %}" alt="stats__images__01" class="stats__images__item col-5 p-0">
+                        <img src="{% static 'images\action_live\sec5_11.png' %}" alt="stats__images__02" class="stats__images__item col-7 p-0">
+
+                        <img src="{% static 'images\action_live\sec5_12.png' %}" alt="stats__images__03" class="stats__images__item col-4 p-0">
+                        <img src="{% static 'images\action_live\sec5_13.png' %}" alt="stats__images__04" class="stats__images__item col-4 p-0">
+                        <img src="{% static 'images\action_live\sec5_14.png' %}" alt="stats__images__05" class="stats__images__item col-4 p-0">
+                    </div>
+
+                    <div class="stats__scroll">
+                        <i class="bi bi-caret-down-fill stats__scroll__btn"></i>
+                    </div>
+                </div>
             </div>
 
         </div>
