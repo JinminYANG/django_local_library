@@ -243,22 +243,20 @@
     font-size: 26px !important;
 }
 
-.chatting__input__registration {
-
-}
+.chatting__input__registration {}
 
 .chatting__input__registration__img {
     width: 40px;
     cursor: pointer;
 }
 
-.login__modal__container{
+.login__modal__container {
     position: absolute;
     transition: all 0.3s linear;
     padding-right: 0;
 }
 
-.login__modal__container.show+.login__modal__backdrop{
+.login__modal__container.show+.login__modal__backdrop {
     display: block;
     z-index: 100;
     opacity: 0.5 !important;
@@ -273,37 +271,37 @@
     transform: translateY(-50%) !important;
 }
 
-.login__modal__contents{
+.login__modal__contents {
     width: 180px;
     height: 84px;
 }
 
-.login__modal__text{
+.login__modal__text {
     text-align: center;
     font-size: 12px;
 }
 
-.login__modal__btns{
+.login__modal__btns {
     border-top: none;
-} 
+}
 
 .login__modal__yes,
-.login__modal__no{
+.login__modal__no {
     min-width: 54px;
     padding: 0;
     font-size: 10px;
     color: var(--white)
 }
 
-.login__modal__no{
+.login__modal__no {
     background-color: #B3B3B3;
 }
 
-.modal-backdrop:not(.login__modal__backdrop){
+.modal-backdrop:not(.login__modal__backdrop) {
     display: none !important;
 }
 
-.login__modal__backdrop{
+.login__modal__backdrop {
     position: absolute;
     top: 0;
     left: 0;
@@ -313,20 +311,20 @@
     background-color: #000;
     /* display: none; */
     visibility: hidden;
-    
     transition: all 0.3s linear;
 }
 
-.modal-backdrop.show{
+.modal-backdrop.show {
     display: block;
     z-index: 100;
     opacity: 0.5 !important;
 }
 
-.modal-open{
+.modal-open {
     padding-right: 0px !important;
     overflow: auto;
 }
+
 
 /* information_contents */
 
@@ -347,6 +345,10 @@
     /* height: 100px; */
     border: 2px solid #E5E5E5;
     cursor: pointer;
+}
+
+.controls__item.active {
+    box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.37) !important;
 }
 
 .controls__item:hover {
@@ -391,9 +393,15 @@
 
 /* setting */
 
-.setting {}
+.setting {
+    display: none;
+}
 
-.setting__header {
+.setting.active {
+    display: block;
+}
+
+.player_info .setting__header {
     position: relative;
     max-height: 56px;
 }
@@ -427,9 +435,13 @@
     display: none;
 }
 
-.setting__contents {}
+.setting__contents {
+    /* max-height: 217px; */
+    /* background: var(--white); */
+}
 
 .setting__list {
+    min-height: 217px;
     max-height: 217px;
     background: var(--white);
 }
@@ -440,10 +452,33 @@
 
 .setting__item {}
 
+.setting__item__header {
+    /* width: 90%; */
+    line-height: 1.2;
+}
+
 .setting__item__label {
     font-size: 14px;
     color: var(--action_live-text-fifth);
     vertical-align: top;
+}
+
+.prediction .setting__item__label {
+    font-size: 11px;
+}
+
+.prediction .custom__btn__label {
+    font-size: 14px;
+}
+
+.custom__description {
+    font-size: 8px;
+    color: var(--chatting-input-bg);
+}
+
+.setting__list__title {
+    font-size: 14px;
+    color: var(--action_live-text-fifth);
 }
 
 .setting__item__btn {
@@ -456,10 +491,37 @@
     border-radius: 20px;
     box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
     transition: 0.3s;
+    cursor: pointer;
 }
 
-.setting__item__btn:checked {
+.prediction .setting__item__btn {
+    width: 35px;
+    height: 18px;
+}
+
+.prediction .custom__btn {
+    position: relative;
+    width: 50px;
+    height: 25px;
+    appearance: none;
+    background: var(--action_live-text-sixth);
+    outline: none;
+    border-radius: 20px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.effects .setting__item__btn:checked {
     background: var(--clicked);
+}
+
+.prediction .setting__item__btn:checked {
+    background: #333FFA;
+}
+
+.player_info .setting__item__btn:checked {
+    background: #E6E2FD;
 }
 
 .setting__item__btn::before {
@@ -476,7 +538,43 @@
     transition: 0.3s;
 }
 
+.prediction .setting__item__btn::before {
+    content: '';
+    position: absolute;
+    width: 13px;
+    height: 13px;
+    border-radius: 20px;
+    top: 50%;
+    left: 3px;
+    transform: translateY(-50%);
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+}
+
+.prediction .custom__btn::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    top: 50%;
+    left: 3px;
+    transform: translateY(-50%);
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+}
+
 .setting__item__btn:checked::before {
+    left: 27px;
+}
+
+.prediction .setting__item__btn:checked::before {
+    left: 18px;
+}
+
+.prediction .custom__btn:checked::before {
     left: 27px;
 }
 

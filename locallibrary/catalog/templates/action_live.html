@@ -148,24 +148,24 @@
 
         <div class="side col-4 p-0">
 
-            <div class="side__controls controls row justify-content-between p-0 m-0">
-                <div class="controls__item controls__effects col-3 p-0 border-radius">
+            <div class="side__controls controls row justify-content-between p-0 m-0" id="sideControls">
+                <div class="controls__item controls__effects col-3 p-0 border-radius" id="controlsEffects">
                     <img src="{% static 'images\action_live\sec3_01.png' %}" alt="effects__img" class="controls__img controls__effects__img d-block">
                     <span class="controls__text controls__effects__text d-block text-center">효과</span>
                 </div>
 
-                <div class="controls__item controls__prediction col-3 p-0 border-radius">
+                <div class="controls__item controls__prediction col-3 p-0 border-radius" id="controlsPrediction">
                     <img src="{% static 'images\action_live\sec3_02.png' %}" alt="prediction__img" class="controls__img controls__prediction__img d-block">
                     <span class="controls__text controls__prediction__text d-block text-center">예측</span>
                 </div>
 
-                <div class="controls__item controls__player_info col-3 p-0 border-radius">
+                <div class="controls__item controls__player_info col-3 p-0 border-radius" id="controlsPlayerInfo">
                     <img src="{% static 'images\action_live\sec3_03.png' %}" alt="player__info__img" class="controls__img controls__player_info__img d-block">
                     <span class="controls__text controls__player_info__text d-block text-center">선수정보</span>
                 </div>
             </div>
 
-            <div class="side__item setting border-radius shadow p-0 ">
+            <div class="side__item setting effects border-radius shadow p-0 active" id="effects">
                 <div class="setting__header contents__header px-4">
                     <img src="{% static 'images\action_live\title_circle.png' %}" alt="setting__header__circle" class="setting__header__circle contents__header__circle">
                     <h2 class="setting__title contents__header__title d-inline-block m-0 ml-2 mr-3">Setting</h2>
@@ -181,36 +181,107 @@
                     <div class="setting__list row justify-content-between mx-0 border-radius py-4 px-5 shadow">
 
                         <div class="setting__list__left col-6 p-0">
-                            <div class="setting__item setting__pitching mb-3">
-                                <label for="pitching__btn" class="setting__item__label pitching__btn__label mr-4">투구</label>
-                                <input type="checkbox" name="pitching__btn" id="pitching__btn" class="setting__item__btn pitching__btn">
+                            <div class="setting__item effects__setting__pitching mb-3">
+                                <label for="effects__pitching__btn" class="setting__item__label effects__pitching__btn__label mr-4">투구</label>
+                                <input type="checkbox" name="effects__pitching__btn" id="effects__pitching__btn" class="setting__item__btn effects__pitching__btn">
                             </div>
-                            <div class="setting__item setting__batting mb-3">
-                                <label for="batting__btn" class="setting__item__label batting__btn__label mr-4">타구</label>
-                                <input type="checkbox" name="batting__btn" id="batting__btn" class="setting__item__btn batting__btn">
+                            <div class="setting__item effects__setting__batting mb-3">
+                                <label for="effects__batting__btn" class="setting__item__label effects__batting__btn__label mr-4">타구</label>
+                                <input type="checkbox" name="effects__batting__btn" id="effects__batting__btn" class="setting__item__btn effects__batting__btn">
                             </div>
-                            <div class="setting__item setting__throw mb-3">
-                                <label for="throw__btn" class="setting__item__label throw__btn__label mr-4">송구</label>
-                                <input type="checkbox" name="throw__btn" id="throw__btn" class="setting__item__btn throw__btn">
+                            <div class="setting__item effects__setting__throw mb-3">
+                                <label for="effects__throw__btn" class="setting__item__label effects__throw__btn__label mr-4">송구</label>
+                                <input type="checkbox" name="effects__throw__btn" id="effects__throw__btn" class="setting__item__btn effects__throw__btn">
                             </div>
-                            <div class="setting__item setting__catch">
-                                <label for="catch__btn" class="setting__item__label catch__btn__label mr-4">포구</label>
-                                <input type="checkbox" name="catch__btn" id="catch__btn" class="setting__item__btn catch__btn">
+                            <div class="setting__item effects__setting__catch">
+                                <label for="effects__catch__btn" class="setting__item__label effects__catch__btn__label mr-4">포구</label>
+                                <input type="checkbox" name="effects__catch__btn" id="effects__catch__btn" class="setting__item__btn effects__catch__btn">
                             </div>
                         </div>
 
                         <div class="setting__item setting__list__right col-5 p-0">
-                            <div class="setting__item setting__on_base mb-3">
-                                <label for="on_base__btn" class="setting__item__label on_base__btn__label mr-4">출루</label>
-                                <input type="checkbox" name="on_base__btn" id="on_base__btn" class="setting__item__btn on_base__btn">
+                            <div class="setting__item effects__setting__on_base mb-3">
+                                <label for="effects__on_base__btn" class="setting__item__label effects__on_base__btn__label mr-4">출루</label>
+                                <input type="checkbox" name="effects__on_base__btn" id="effects__on_base__btn" class="setting__item__btn effects__on_base__btn">
                             </div>
-                            <div class="setting__item setting__steal mb-3">
-                                <label for="steal__btn" class="setting__item__label steal__btn__label mr-4">도루</label>
-                                <input type="checkbox" name="steal__btn" id="steal__btn" class="setting__item__btn steal__btn">
+                            <div class="setting__item effects__setting__steal mb-3">
+                                <label for="effects__steal__btn" class="setting__item__label effects__steal__btn__label mr-4">도루</label>
+                                <input type="checkbox" name="effects__steal__btn" id="effects__steal__btn" class="setting__item__btn effects__steal__btn">
                             </div>
-                            <div class="setting__item setting__judgment">
-                                <label for="judgment__btn" class="setting__item__label judgment__btn__label mr-2">볼 판정</label>
-                                <input type="checkbox" name="judgment__btn" id="judgment__btn" class="setting__item__btn judgment__btn">
+                            <div class="setting__item effects__setting__judgment">
+                                <label for="effects__judgment__btn" class="setting__item__label effects__judgment__btn__label mr-2">볼 판정</label>
+                                <input type="checkbox" name="effects__judgment__btn" id="effects__judgment__btn" class="setting__item__btn effects__judgment__btn">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="side__item setting prediction border-radius shadow p-0" id="prediction">
+                <div class="setting__header contents__header px-4">
+                    <img src="{% static 'images\action_live\sec3_14.png' %}" alt="setting__header__circle" class="setting__header__circle contents__header__circle">
+                    <h2 class="setting__title contents__header__title d-inline-block m-0 ml-2 mr-3">Setting</h2>
+
+                    <img src="{% static 'images\action_live\sec3_10.png' %}" alt="setting__btn__on__example" class="setting__btn__example setting__btn__on__example">
+                    <img src="{% static 'images\action_live\sec3_06.png' %}" alt="setting__btn__off__example" class="setting__btn__example setting__btn__off__example">
+
+                    <img src="{% static 'images\action_live\sec3_07.png' %}" alt="setting__alert" class="setting__alert float-right">
+                    <img src="{% static 'images\action_live\sec3_04.png' %}" alt="setting__description" class="setting__description">
+                </div>
+
+                <div class="setting__contents">
+                    <div class="setting__list row justify-content-between mx-0 border-radius py-4 px-5 shadow">
+
+                        <div class="setting__custom col-12 p-0 mb-3">
+                            <div class="setting__item__header float-left">
+                                <label for="custom__btn" class="setting__item__label custom__btn__label d-block mr-4 mb-0">커스텀</label>
+                                <span class="custom__description">비활성화 시, 추천 설정값으로 자동 적용됩니다.</span>
+                            </div>
+                            <div class="setting__item__header_btn float-right">
+                                <input type="checkbox" name="custom__btn" id="custom__btn" class="setting__item__btn custom__btn ">
+                            </div>
+                        </div>
+
+                        <div class="setting__list__left col-6 pl-0 pr-2">
+                            <h3 class="setting__list__title batting_prediction mb-2">타구예측</h3>
+
+                            <div class="setting__item batting_prediction__left_handed_pitcher ">
+                                <label for="batting_prediction__left_handed_pitcher__btn" class="setting__item__label batting_prediction__left_handed_pitcher__btn__label">좌투수상대기록</label>
+                                <input type="checkbox" name="batting_prediction__left_handed_pitcher__btn" id="batting_prediction__left_handed_pitcher__btn" class="setting__item__btn batting_prediction__left_handed_pitcher__btn float-right">
+                            </div>
+                            <div class="setting__item batting_prediction__right_handed_pitcher ">
+                                <label for="right_handed_pitcher__btn" class="setting__item__label batting_prediction__right_handed_pitcher__btn__label">우투수상대기록</label>
+                                <input type="checkbox" name="batting_prediction__right_handed_pitcher__btn" id="batting_prediction__right_handed_pitcher__btn" class="setting__item__btn batting_prediction__right_handed_pitcher__btn float-right">
+                            </div>
+                            <div class="setting__item batting_prediction__current_stadium">
+                                <label for="current_stadium__btn" class="setting__item__label batting_prediction__current_stadium__btn__label">현재구장기록</label>
+                                <input type="checkbox" name="batting_prediction__current_stadium__btn" id="batting_prediction__current_stadium__btn" class="setting__item__btn batting_prediction__current_stadium__btn float-right">
+                            </div>
+                            <div class="setting__item batting_prediction__setting__current_pitcher">
+                                <label for="batting_prediction__current_pitcher__btn" class="setting__item__label batting_prediction__current_pitcher__btn__label">현재투수상대기록</label>
+                                <input type="checkbox" name="batting_prediction__current_pitcher__btn" id="batting_prediction__current_pitcher__btn" class="setting__item__btn batting_prediction__current_pitcher__btn float-right">
+                            </div>
+                        </div>
+
+                        <div class="setting__list__right col-6 pl-2 pr-0">
+                            <h3 class="setting__list__title match_prediction mb-2">승부예측</h3>
+                            
+                            <div class="setting__item match_prediction__left_handed_pitcher ">
+                                <label for="match_prediction__left_handed_pitcher__btn" class="setting__item__label match_prediction__left_handed_pitcher__btn__label ">좌투수상대기록</label>
+                                <input type="checkbox" name="match_prediction__left_handed_pitcher__btn" id="match_prediction__left_handed_pitcher__btn" class="setting__item__btn match_prediction__left_handed_pitcher__btn float-right">
+                            </div>
+                            <div class="setting__item match_prediction__right_handed_pitcher">
+                                <label for="right_handed_pitcher__btn" class="setting__item__label match_prediction__right_handed_pitcher__btn__label ">우투수상대기록</label>
+                                <input type="checkbox" name="match_prediction__right_handed_pitcher__btn" id="match_prediction__right_handed_pitcher__btn" class="setting__item__btn match_prediction__right_handed_pitcher__btn float-right">
+                            </div>
+                            <div class="setting__item match_prediction__current_stadium">
+                                <label for="current_stadium__btn" class="setting__item__label match_prediction__current_stadium__btn__label ">현재구장기록</label>
+                                <input type="checkbox" name="match_prediction__current_stadium__btn" id="match_prediction__current_stadium__btn" class="setting__item__btn match_prediction__current_stadium__btn float-right">
+                            </div>
+                            <div class="setting__item match_prediction__current_pitcher">
+                                <label for="match_prediction__current_pitcher__btn" class="setting__item__label  match_prediction__current_pitcher__btn__label">현재투수상대기록</label>
+                                <input type="checkbox" name="match_prediction__current_pitcher__btn" id="match_prediction__current_pitcher__btn" class="setting__item__btn match_prediction__current_pitcher__btn float-right">
                             </div>
                         </div>
 
@@ -218,6 +289,33 @@
                 </div>
 
 
+            </div>
+
+            <div class="side__item setting player_info border-radius shadow p-0" id="playerInfo">
+                <div class="setting__header contents__header px-4">
+                    <img src="{% static 'images\action_live\sec3_15.png' %}" alt="setting__header__circle" class="setting__header__circle contents__header__circle">
+                    <h2 class="setting__title contents__header__title d-inline-block m-0 ml-2 mr-3">Setting</h2>
+
+                    <img src="{% static 'images\action_live\sec3_16.png' %}" alt="setting__btn__on__example" class="setting__btn__example setting__btn__on__example">
+                    <img src="{% static 'images\action_live\sec3_06.png' %}" alt="setting__btn__off__example" class="setting__btn__example setting__btn__off__example">
+
+                    <img src="{% static 'images\action_live\sec3_07.png' %}" alt="setting__alert" class="setting__alert float-right">
+                    <img src="{% static 'images\action_live\sec3_04.png' %}" alt="setting__description" class="setting__description">
+                </div>
+
+                <div class="setting__contents">
+                    <div class="setting__list row justify-content-between mx-0 border-radius py-4 px-5 shadow">
+                        <div class="setting__item player_info__home align-self-center col-12 mb-3">
+                            <label for="player_info__home__btn" class="setting__item__label player_info__home__btn__label mr-4">홈팀</label>
+                            <input type="checkbox" name="player_info__home__btn" id="player_info__home__btn" class="setting__item__btn player_info__home__btn float-right">
+                        </div>
+                        <div class="setting__item player_info__away align-self-center col-12 mb-3">
+                            <label for="player_info__away__btn" class="setting__item__label player_info__away__btn__label mr-4">어웨이팀</label>
+                            <input type="checkbox" name="player_info__away__btn" id="player_info__away__btn" class="setting__item__btn player_info__away__btn float-right">
+                        </div>
+
+                    </div>
+                </div>
             </div>
 
             <div class="side__item player border-radius shadow p-0 mt-4">
@@ -383,10 +481,11 @@
 
 {% block script %}
 {% comment %} https://github.com/OneSignal/emoji-picker {% endcomment %}
+<script src="{% static 'js\controlSide.js' %}"></script>
 <script src="{% static 'emoji/js/config.js' %}"></script>
 <script src="{% static 'emoji/js/util.js' %}"></script>
 <script src="{% static 'emoji/js/jquery.emojiarea.js' %}"></script>
 <script src="{% static 'emoji/js/emoji-picker.js' %}"></script>
 <script src="{% static 'js/getEmoji.js' %}"></script>
-{% endblock script %}
 
+{% endblock script %}
