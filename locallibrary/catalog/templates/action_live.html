@@ -17,25 +17,29 @@
 
             <article class="streaming border-radius shadow">
 
-                <div class="streaming__item m-auto border-radius">
+                <div class="streaming__item border-radius">
                     <img src="{% static 'images\action_live\sec1_99.png' %}" class="streaming__item__img border-radius" />
                 </div>
 
-                <div class="streaming__texts p-3">
-                    <div class="streaming__info d-inline-block">
-                        <img src="{% static 'images\action_live\sec1_01.png' %}" alt="streaming__info__icon" class="streaming__info__icon" />
+                <div class="streaming__item__overlay border-radius">
+                    <img src="{% static 'images\main\images\sec1_02.png' %}" class="streaming__item__overlay__img">
+                </div>
 
-                        <div class="streaming__header mt-3">
-                            <h2 class="streaming__header__title d-inline-block">KT vs 한화 (KT wiz vs HanHwa eagles)</h2>
-                            <span class="streaming__header__gap d-inline-block mx-1"></span>
-                            <span class="streaming__header__league">KBO 리그
+                <div class="streaming__textbox p-3">
+                    <div class="streaming__info d-inline-block">
+                        <img src="{% static 'images\action_live\sec1_01.png' %}" alt="streaming__info__live_icon" class="streaming__info__live_icon" />
+
+                        <div class="streaming__info__header d-block mt-3">
+                            <h2 class="streaming__info__header__title d-inline-block">KT vs 한화 (KT wiz vs HanHwa eagles)</h2>
+                            <span class="streaming__info__header__gap d-inline-block mx-1"></span>
+                            <span class="streaming__info__header__league">KBO 리그
                         </div>
 
                         <div class="streaming__info__sub mt-1">
                             <span class="streaming__info__sub__today">2021.09.01</span>
-                            <span class="streaming__info__sub__gap d-inline-block  mx-1"></span>
-                            <span class="streaming__info__sub__stadium">한화생명이클스파크</span>
-                            <span class="streaming__info__sub__gap d-inline-block  mx-1"></span>
+                            <span class="streaming__info__sub__gap d-inline-block mx-1"></span>
+                            <span class="streaming__info__sub__stadium">한화생명이글스파크</span>
+                            <span class="streaming__info__sub__gap d-inline-block mx-1"></span>
                             <span class="streaming__info__sub__start">시작시간 14:10</span>
                         </div>
                     </div>
@@ -50,67 +54,102 @@
                     </div>
 
                     <div class="streaming__bottom mt-4 ml-5">
-                        <div class="streaming__bottom__like d-inline-block mr-4">
-                            <img src="{% static 'images\action_live\sec1_03.png' %}" alt="streaming__bottom__like__img" class="streaming__bottom__img streaming__bottom__like__img mr-1">
-                            <span class="streaming__bottom__like__text">좋아요</span>
+                        <div class="streaming__bottom__item streaming__bottom__like d-inline-block mr-4">
+                            <span class="streaming__bottom__item__box streaming__bottom__like__box mr-1"></span>
+                            <span class="streaming__bottom__item__text streaming__bottom__like__text">좋아요</span>
                         </div>
 
-                        <div class="streaming__bottom__share d-inline-block mr-4">
-                            <img src="{% static 'images\action_live\sec1_05.png' %}" alt="streaming__bottom__share__img" class="streaming__bottom__img streaming__bottom__share__img mr-1">
-                            <span class="streaming__bottom__share__text">공유하기</span>
+                        <div class="streaming__bottom__item streaming__bottom__share d-inline-block mr-4">
+                            <span class="streaming__bottom__item__box streaming__bottom__share__box mr-1"></span>
+                            <span class="streaming__bottom__item__text streaming__bottom__share__text">공유하기</span>
                         </div>
 
-                        <div class="streaming__bottom__add_to_playlist d-inline-block">
-                            <img src="{% static 'images\action_live\sec1_06.png' %}" alt="streaming__bottom__add_to_playlist__img" class="streaming__bottom__img streaming__bottom__add_to_playlist__img mr-1">
-                            <span class="streaming__bottom__add_to_playlist__text">재생목록에 추가</span>
+                        <div class="streaming__bottom__item streaming__bottom__add_to_playlist d-inline-block">
+                            <span class="streaming__bottom__item__box streaming__bottom__add_to_playlist__box mr-1"></span>
+                            <span class="streaming__bottom__item__text streaming__bottom__add_to_playlist__text">재생목록에 추가</span>
                         </div>
                     </div>
                 </div>
-
-
             </article>
 
-            <div class="chatting border-radius shadow ">
+            <div class="chatting border-radius shadow">
                 <div class="chatting__header contents__header px-4">
                     <img src="{% static 'images\action_live\title_circle.png' %}" alt="chatting__header__circle" class="chatting__header__circle contents__header__circle">
                     <h2 class="chatting__title contents__header__title d-inline-block m-0 ml-2">Live Chat Room</h2>
+
+                    <button class="btn float-right chatting__header__toggle down p-0" type="button" data-toggle="collapse" data-target="#collapseChattingContents" aria-expanded="false" aria-controls="collapseChattingContents">
+                        <img src="{% static 'images\action_live\sec2_01.png' %}" alt="chatting__header__toggle" class="chatting__header__toggle__img">
+                    </button>
                 </div>
 
-                <div class="chatting__contents border-radius pb-3">
-                
+                <div class="chatting__contents border-radius show pb-3 collapse" id="collapseChattingContents">
                     <div class="chatting__list m-auto px-2 pt-3">
-
                         <div class="chatting__item mb-1">
                             <div class="chatting__item__header d-inline-block w-25">
-                                <img src="{% static 'images\action_live\sec2_02.png' %}" alt="chatting__user__01__icon" class="chatting__user__icon">
-                                <h3 class="chatting__user__id d-inline-block">KTwizfan123</h3>
+                                <img src="{% static 'images\action_live\sec2_03.png' %}" alt="chatting__user__01__icon" class="chatting__item__header__user__icon">
+                                <h3 class="chatting__item__header__user__id d-inline-block">actionsports7</h3>
                             </div>
 
                             <div class="chatting__item__box d-inline-block">
-                                <span class="chatting__user__text d-block p-2 px-3 m-1">실시간 생중계 잘 보고 있습니다 재미있어요~!</span>
-                                <span class="chatting__user__text d-inline-block p-2 px-3 m-1">오늘 경기력이 대단하네요!</span>
+                                <span class="chatting__item__box__user__text d-block p-2 px-3 m-1">더 생생하게 와닿네요 우리팀 응원합니다^^</span>
                             </div>
                         </div>
 
                         <div class="chatting__item mb-1">
                             <div class="chatting__item__header d-inline-block w-25">
-                                <img src="{% static 'images\action_live\sec2_03.png' %}" alt="chatting__user__01__icon" class="chatting__user__icon">
-                                <h3 class="chatting__user__id d-inline-block">actionsports7</h3>
+                                <img src="{% static 'images\action_live\sec2_02.png' %}" alt="chatting__user__01__icon" class="chatting__item__header__user__icon">
+                                <h3 class="chatting__item__header__user__id d-inline-block">KTwizfan123</h3>
                             </div>
 
                             <div class="chatting__item__box d-inline-block">
-                                <span class="chatting__user__text d-block p-2 px-3 m-1">더 생생하게 와닿네요 우리팀 응원합니다^^</span>
+                                <span class="chatting__item__box__user__text d-block p-2 px-3 m-1">실시간 생중계 잘 보고 있습니다 재미있어요~!</span>
+                                <span class="chatting__item__box__user__text d-inline-block p-2 px-3 m-1">오늘 경기력이 대단하네요!</span>
+                            </div> 
+                        </div>
+
+                        <div class="chatting__item mb-1">
+                            <div class="chatting__item__header d-inline-block w-25">
+                                <img src="{% static 'images\action_live\sec2_02.png' %}" alt="chatting__user__01__icon" class="chatting__item__header__user__icon">
+                                <h3 class="chatting__item__header__user__id d-inline-block">KTwizfan123</h3>
+                            </div>
+
+                            <div class="chatting__item__box d-inline-block">
+                                <span class="chatting__item__box__user__text d-block p-2 px-3 m-1">실시간 생중계 잘 보고 있습니다 재미있어요~!</span>
+                                <span class="chatting__item__box__user__text d-inline-block p-2 px-3 m-1">오늘 경기력이 대단하네요!</span>
+                            </div> 
+                        </div>
+
+                        <div class="chatting__item mb-1">
+                            <div class="chatting__item__header d-inline-block w-25">
+                                <img src="{% static 'images\action_live\sec2_02.png' %}" alt="chatting__user__01__icon" class="chatting__item__header__user__icon">
+                                <h3 class="chatting__item__header__user__id d-inline-block">KTwizfan123</h3>
+                            </div>
+
+                            <div class="chatting__item__box d-inline-block">
+                                <span class="chatting__item__box__user__text d-block p-2 px-3 m-1">실시간 생중계 잘 보고 있습니다 재미있어요~!</span>
+                                <span class="chatting__item__box__user__text d-inline-block p-2 px-3 m-1">오늘 경기력이 대단하네요!</span>
                             </div>
                         </div>
 
-                        <div class="chatting__item my__chatting__item">
-                            <div class="my__chatting__item__box d-inline-block">
-                                <span class="my__chatting__user__text d-block p-2 px-3 m-1">실시간 생중계 잘 보고 있습니다 재미있어요~!</span>
+                        <div class="chatting__item mb-1">
+                            <div class="chatting__item__header d-inline-block w-25">
+                                <img src="{% static 'images\action_live\sec2_03.png' %}" alt="chatting__user__01__icon" class="chatting__item__header__user__icon">
+                                <h3 class="chatting__item__header__user__id d-inline-block">actionsports7</h3>
+                            </div>
+
+                            <div class="chatting__item__box d-inline-block">
+                                <span class="chatting__item__box__user__text d-block p-2 px-3 m-1">더 생생하게 와닿네요 우리팀 응원합니다^^</span>
+                            </div>
+                        </div>
+
+                        <div class="chatting__item my_chatting__item text-right">
+                            <div class="my_chatting__item__box d-inline-block">
+                                <span class="my_chatting__item__box__text d-block p-2 px-3 m-1">실시간 생중계 잘 보고 있습니다 재미있어요~!</span>
                             </div>
                             
-                            <div class="my__chatting__item__header d-inline-block w-25">
-                                <h3 class="my__chatting__user__id d-inline-block">Actionsports2021</h3>
-                                <img src="{% static 'images\action_live\sec2_04.png' %}" alt="chatting__user__01__icon" class="chatting__user__icon">
+                            <div class="my_chatting__item__header d-inline-block w-25">
+                                <h3 class="my_chatting__item__header__user__id d-inline-block">Actionsports2021</h3>
+                                <img src="{% static 'images\action_live\sec2_04.png' %}" alt="chatting__user__01__icon" class="chatting__item__header__user__icon">
                             </div>
                         </div>
 
@@ -129,7 +168,7 @@
                     <div class="modal fade login__modal__container" id="chatModal" tabindex="-1" aria-labelledby="chatModalLabel" aria-hidden="true">
                         <div class="modal-dialog login__modal__box modal-sm">
                             <div class="modal-content login__modal__contents border-radius">
-                                <div class="modal-body login__modal__text pb-0 pt-2">
+                                <div class="modal-body login__modal__contents__text pb-0 pt-2">
                                     로그인이 필요한 <br> 서비스 입니다.
                                 </div>
                                 <div class="modal-footer login__modal__btns justify-content-center pt-0">
@@ -138,7 +177,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>   
+                    </div>
 
                      <div class="modal-backdrop fade login__modal__backdrop border-radius"></div>
                 </div>
@@ -148,27 +187,27 @@
 
         <div class="side col-4 p-0">
 
-            <div class="side__controls controls row justify-content-between p-0 m-0" id="sideControls">
-                <div class="controls__item controls__effects col-3 p-0 border-radius" id="controlsEffects">
-                    <img src="{% static 'images\action_live\sec3_01.png' %}" alt="effects__img" class="controls__img controls__effects__img d-block">
-                    <span class="controls__text controls__effects__text d-block text-center">효과</span>
+            <div class="side__controls controls row justify-content-between p-0 m-0">
+                <div class="controls__item controls__effects col-3 p-0 border-radius active">
+                    <img src="{% static 'images\action_live\sec3_01.png' %}" alt="effects__img" class="controls__item__img controls__effects__img d-block">
+                    <span class="controls__item__text controls__effects__text d-block text-center">효과</span>
                 </div>
 
-                <div class="controls__item controls__prediction col-3 p-0 border-radius" id="controlsPrediction">
-                    <img src="{% static 'images\action_live\sec3_02.png' %}" alt="prediction__img" class="controls__img controls__prediction__img d-block">
-                    <span class="controls__text controls__prediction__text d-block text-center">예측</span>
+                <div class="controls__item controls__prediction col-3 p-0 border-radius">
+                    <img src="{% static 'images\action_live\sec3_02.png' %}" alt="prediction__img" class="controls__item__img controls__prediction__img d-block">
+                    <span class="controls__item__text controls__prediction__text d-block text-center">예측</span>
                 </div>
 
-                <div class="controls__item controls__player_info col-3 p-0 border-radius" id="controlsPlayerInfo">
-                    <img src="{% static 'images\action_live\sec3_03.png' %}" alt="player__info__img" class="controls__img controls__player_info__img d-block">
-                    <span class="controls__text controls__player_info__text d-block text-center">선수정보</span>
+                <div class="controls__item controls__player_info col-3 p-0 border-radius">
+                    <img src="{% static 'images\action_live\sec3_03.png' %}" alt="player__info__img" class="controls__item__img controls__player_info__img d-block">
+                    <span class="controls__item__text controls__player_info__text d-block text-center">선수정보</span>
                 </div>
             </div>
 
             <div class="side__item setting effects border-radius shadow p-0 active" id="effects">
                 <div class="setting__header contents__header px-4">
                     <img src="{% static 'images\action_live\title_circle.png' %}" alt="setting__header__circle" class="setting__header__circle contents__header__circle">
-                    <h2 class="setting__title contents__header__title d-inline-block m-0 ml-2 mr-3">Setting</h2>
+                    <h2 class="setting__header__title contents__header__title d-inline-block m-0 ml-2 mr-3">Setting</h2>
 
                     <img src="{% static 'images\action_live\sec3_05.png' %}" alt="setting__btn__on__example" class="setting__btn__example setting__btn__on__example">
                     <img src="{% static 'images\action_live\sec3_06.png' %}" alt="setting__btn__off__example" class="setting__btn__example setting__btn__off__example">
@@ -178,39 +217,39 @@
                 </div>
 
                 <div class="setting__contents">
-                    <div class="setting__list row justify-content-between mx-0 border-radius py-4 px-5 shadow">
+                    <div class="setting__list row justify-content-between mx-0 border-radius py-4 px-5">
 
-                        <div class="setting__list__left col-6 p-0">
-                            <div class="setting__item effects__setting__pitching mb-3">
+                        <div class="setting__list__left col-5 p-0">
+                            <div class="setting__item effects__setting__pitching mt-1 mb-3">
                                 <label for="effects__pitching__btn" class="setting__item__label effects__pitching__btn__label mr-4">투구</label>
-                                <input type="checkbox" name="effects__pitching__btn" id="effects__pitching__btn" class="setting__item__btn effects__pitching__btn">
+                                <input type="checkbox" name="effects__pitching__btn" id="effects__pitching__btn" class="setting__item__btn effects__pitching__btn float-right">
                             </div>
                             <div class="setting__item effects__setting__batting mb-3">
                                 <label for="effects__batting__btn" class="setting__item__label effects__batting__btn__label mr-4">타구</label>
-                                <input type="checkbox" name="effects__batting__btn" id="effects__batting__btn" class="setting__item__btn effects__batting__btn">
+                                <input type="checkbox" name="effects__batting__btn" id="effects__batting__btn" class="setting__item__btn effects__batting__btn float-right">
                             </div>
                             <div class="setting__item effects__setting__throw mb-3">
                                 <label for="effects__throw__btn" class="setting__item__label effects__throw__btn__label mr-4">송구</label>
-                                <input type="checkbox" name="effects__throw__btn" id="effects__throw__btn" class="setting__item__btn effects__throw__btn">
+                                <input type="checkbox" name="effects__throw__btn" id="effects__throw__btn" class="setting__item__btn effects__throw__btn float-right">
                             </div>
                             <div class="setting__item effects__setting__catch">
                                 <label for="effects__catch__btn" class="setting__item__label effects__catch__btn__label mr-4">포구</label>
-                                <input type="checkbox" name="effects__catch__btn" id="effects__catch__btn" class="setting__item__btn effects__catch__btn">
+                                <input type="checkbox" name="effects__catch__btn" id="effects__catch__btn" class="setting__item__btn effects__catch__btn float-right">
                             </div>
                         </div>
 
                         <div class="setting__item setting__list__right col-5 p-0">
-                            <div class="setting__item effects__setting__on_base mb-3">
+                            <div class="setting__item effects__setting__on_base mt-1 mb-3">
                                 <label for="effects__on_base__btn" class="setting__item__label effects__on_base__btn__label mr-4">출루</label>
-                                <input type="checkbox" name="effects__on_base__btn" id="effects__on_base__btn" class="setting__item__btn effects__on_base__btn">
+                                <input type="checkbox" name="effects__on_base__btn" id="effects__on_base__btn" class="setting__item__btn effects__on_base__btn float-right">
                             </div>
                             <div class="setting__item effects__setting__steal mb-3">
                                 <label for="effects__steal__btn" class="setting__item__label effects__steal__btn__label mr-4">도루</label>
-                                <input type="checkbox" name="effects__steal__btn" id="effects__steal__btn" class="setting__item__btn effects__steal__btn">
+                                <input type="checkbox" name="effects__steal__btn" id="effects__steal__btn" class="setting__item__btn effects__steal__btn float-right">
                             </div>
                             <div class="setting__item effects__setting__judgment">
                                 <label for="effects__judgment__btn" class="setting__item__label effects__judgment__btn__label mr-2">볼 판정</label>
-                                <input type="checkbox" name="effects__judgment__btn" id="effects__judgment__btn" class="setting__item__btn effects__judgment__btn">
+                                <input type="checkbox" name="effects__judgment__btn" id="effects__judgment__btn" class="setting__item__btn effects__judgment__btn float-right">
                             </div>
                         </div>
 
@@ -221,7 +260,7 @@
             <div class="side__item setting prediction border-radius shadow p-0" id="prediction">
                 <div class="setting__header contents__header px-4">
                     <img src="{% static 'images\action_live\sec3_14.png' %}" alt="setting__header__circle" class="setting__header__circle contents__header__circle">
-                    <h2 class="setting__title contents__header__title d-inline-block m-0 ml-2 mr-3">Setting</h2>
+                    <h2 class="setting__header__title contents__header__title d-inline-block m-0 ml-2 mr-3">Setting</h2>
 
                     <img src="{% static 'images\action_live\sec3_10.png' %}" alt="setting__btn__on__example" class="setting__btn__example setting__btn__on__example">
                     <img src="{% static 'images\action_live\sec3_06.png' %}" alt="setting__btn__off__example" class="setting__btn__example setting__btn__off__example">
@@ -294,7 +333,7 @@
             <div class="side__item setting player_info border-radius shadow p-0" id="playerInfo">
                 <div class="setting__header contents__header px-4">
                     <img src="{% static 'images\action_live\sec3_15.png' %}" alt="setting__header__circle" class="setting__header__circle contents__header__circle">
-                    <h2 class="setting__title contents__header__title d-inline-block m-0 ml-2 mr-3">Setting</h2>
+                    <h2 class="setting__header__title contents__header__title d-inline-block m-0 ml-2 mr-3">Setting</h2>
 
                     <img src="{% static 'images\action_live\sec3_16.png' %}" alt="setting__btn__on__example" class="setting__btn__example setting__btn__on__example">
                     <img src="{% static 'images\action_live\sec3_06.png' %}" alt="setting__btn__off__example" class="setting__btn__example setting__btn__off__example">
@@ -305,11 +344,11 @@
 
                 <div class="setting__contents">
                     <div class="setting__list row justify-content-between mx-0 border-radius py-4 px-5 shadow">
-                        <div class="setting__item player_info__home align-self-center col-12 mb-3">
+                        <div class="setting__item player_info__home align-self-center col-12 pt-4">
                             <label for="player_info__home__btn" class="setting__item__label player_info__home__btn__label mr-4">홈팀</label>
                             <input type="checkbox" name="player_info__home__btn" id="player_info__home__btn" class="setting__item__btn player_info__home__btn float-right">
                         </div>
-                        <div class="setting__item player_info__away align-self-center col-12 mb-3">
+                        <div class="setting__item player_info__away align-self-center col-12 pb-4">
                             <label for="player_info__away__btn" class="setting__item__label player_info__away__btn__label mr-4">어웨이팀</label>
                             <input type="checkbox" name="player_info__away__btn" id="player_info__away__btn" class="setting__item__btn player_info__away__btn float-right">
                         </div>
@@ -318,39 +357,39 @@
                 </div>
             </div>
 
-            <div class="side__item player border-radius shadow p-0 mt-4">
+            <div class="side__item real_time_player border-radius shadow p-0 mt-4">
 
-                <div class="player__header contents__header px-4 ">
-                    <img src="{% static 'images\action_live\title_circle.png' %}" alt="player__header__circle" class="player__header__circle contents__header__circle">
+                <div class="real_time_player__header contents__header px-4 ">
+                    <img src="{% static 'images\action_live\title_circle.png' %}" alt="real_time_player__header__circle" class="real_time_player__header__circle contents__header__circle">
                     <h2 class="player__title contents__header__title d-inline-block m-0 ml-2">Real-time Player</h2>
                 </div>
 
-                <div class="player__item player__home border-radius shadow mt-3">
-                    <img src="{% static 'images\action_live\sec4_01.png' %}" alt="player__home__img" class="player__item__img player__home__img" />
+                <div class="real_time_player__item real_time_player__home border-radius mt-3">
+                    <img src="{% static 'images\action_live\sec4_01.png' %}" alt="real_time_player__home__img" class="real_time_player__item__img real_time_player__home__img" />
 
-                    <div class="player__item__name player__home__name">
-                        <span class="player__item__name__kor player__home_kor m-0">황재균</span>
-                        <span class="player__item__name__eng player__home__eng m-0">Hwang Jae gyun</span>
+                    <div class="real_time_player__item__name real_time_player__home__name">
+                        <span class="real_time_player__item__name__kor real_time_player__home_kor m-0">황재균</span>
+                        <span class="real_time_player__item__name__eng real_time_player__home__eng m-0">Hwang Jae gyun</span>
                     </div>
 
-                    <div class="player__item__team player__home__team">
-                        <span class="player__item__team__title player__home__team__title mr-2">KT WIZ</span>
-                        <img src="{% static 'images\action_live\sec4_03.png' %}" alt="player__home__team__img" class="player__item__team__img player__home__team__img" />
+                    <div class="real_time_player__item__team real_time_player__home__team">
+                        <span class="real_time_player__item__team__title real_time_player__home__team__title mr-2">KT WIZ</span>
+                        <img src="{% static 'images\action_live\sec4_03.png' %}" alt="real_time_player__home__team__img" class="real_time_player__item__team__img real_time_player__home__team__img" />
                     </div>
 
                 </div>
 
-                <div class="player__item player__away border-radius shadow mt-4">
-                    <img src="{% static 'images\action_live\sec4_02.png' %}" alt="player__away__img" class="player__item__img player__away__img" />
+                <div class="real_time_player__item real_time_player__away border-radius mt-4">
+                    <img src="{% static 'images\action_live\sec4_02.png' %}" alt="real_time_player__away__img" class="real_time_player__item__img real_time_player__away__img" />
 
-                    <div class="player__item__name player__away__name">
-                        <span class="player__item__name__kor player__away__name__kor">노시환</span>
-                        <span class="player__item__name__eng player__away__name__eng">Roh Si Hwan</span>
+                    <div class="real_time_player__item__name real_time_player__away__name">
+                        <span class="real_time_player__item__name__kor real_time_player__away__name__kor">노시환</span>
+                        <span class="real_time_player__item__name__eng real_time_player__away__name__eng">Roh Si Hwan</span>
                     </div>
 
-                    <div class="player__item__team player__away__team">
-                        <span class="player__item__team__title player__away__team__title mr-2">한화 이글스</span>
-                        <img src="{% static 'images\action_live\sec4_04.png' %}" alt="player__away__team__img" class="player__item__team__img player__away__team__img" />
+                    <div class="real_time_player__item__team real_time_player__away__team">
+                        <span class="real_time_player__item__team__title real_time_player__away__team__title mr-2">한화 이글스</span>
+                        <img src="{% static 'images\action_live\sec4_04.png' %}" alt="real_time_player__away__team__img" class="real_time_player__item__team__img real_time_player__away__team__img" />
                     </div>
 
                 </div>
@@ -364,14 +403,13 @@
                 </div>
 
                 <div class="stats__contents d-block m-auto">
-                    {% comment %} <img src="{% static 'images\action_live\sec5_08.png' %}" alt="stats__bg" class="stats__bg" /> {% endcomment %}
 
                     <img src="{% static 'images\action_live\sec5_01.png' %}" alt="stats__player__img" class="stats__player__img" />
-                    <img src="{% static 'images\action_live\sec5_02.png' %}" alt="stats__back__logo__img" class="stats__back__logo__img" />
+                    <img src="{% static 'images\action_live\sec5_02.png' %}" alt="stats__back__logo__img" class="stats__back_logo__img" />
 
                     <div class="stats__btns float-right mr-4">
-                        <img src="{% static 'images\action_live\sec5_04.png' %}" alt="stats__share__img" class="stats__btns__share__img">
-                        <img src="{% static 'images\action_live\sec5_05.png' %}" alt="stats__bookmark__img" class="stats__btns__bookmark__img">
+                        <img src="{% static 'images\action_live\sec5_04.png' %}" alt="stats__share__img" class="stats__btns__share__img mr-2">
+                        <span class="stats__btns__item stats__btns__bookmark mr-1"></span>
                     </div>
 
                     <div class="stats__info">
@@ -467,8 +505,8 @@
                         <img src="{% static 'images\action_live\sec5_14.png' %}" alt="stats__images__05" class="stats__images__item col-4 p-0">
                     </div>
 
-                    <div class="stats__scroll">
-                        <i class="bi bi-caret-down-fill stats__scroll__btn"></i>
+                    <div class="stats__more">
+                        <img src="{% static 'images\action_live\sec2_01.png' %}" alt="stats__more__btn" class="stats__more__btn" />
                     </div>
                 </div>
             </div>
@@ -480,12 +518,15 @@
 {% endblock content %}
 
 {% block script %}
-{% comment %} https://github.com/OneSignal/emoji-picker {% endcomment %}
-<script src="{% static 'js\controlSide.js' %}"></script>
-<script src="{% static 'emoji/js/config.js' %}"></script>
-<script src="{% static 'emoji/js/util.js' %}"></script>
-<script src="{% static 'emoji/js/jquery.emojiarea.js' %}"></script>
-<script src="{% static 'emoji/js/emoji-picker.js' %}"></script>
-<script src="{% static 'js/getEmoji.js' %}"></script>
+<!-- page control -->
+<script src="{% static 'js\controlActionLivePage.js' %}"></script>
+
+<!-- input Emoji -->
+{% comment %} 출처 : https://github.com/OneSignal/emoji-picker {% endcomment %}
+<script src="{% static 'emoji\js\config.js' %}"></script>
+<script src="{% static 'emoji\js\util.js' %}"></script>
+<script src="{% static 'emoji\js\jquery.emojiarea.js' %}"></script>
+<script src="{% static 'emoji\js\emoji-picker.js' %}"></script>
+<script src="{% static 'js\getEmoji.js' %}"></script>
 
 {% endblock script %}
