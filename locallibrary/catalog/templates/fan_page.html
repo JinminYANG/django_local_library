@@ -1,0 +1,432 @@
+{% extends "base_generic.html"%} {% load static %} {% block css %}
+<link href="{% static 'css/fan_page.css' %}" rel="stylesheet" /> {% endblock css %} {% block content %}
+
+<div class="container container-md container-sm p-0 pt-4">
+    <div class="contents">
+        <h2 class="contents__title">팬페이지</h2>
+
+        <div class="search border-radius shadow mt-4">
+
+            <div class="team__list row h-100 justify-content-around border-radius shadow mx-0 px-3">
+                <div class="team__item col h-100 my-auto px-2 py-3 text-center">
+                    <div class="team__item__logo__conatiner h-50">
+                        <img src="{% static 'images\fan_page\fan_02.png' %}" alt="team__item__logo" class="team__item__logo">
+                    </div>
+                    <div class="team__item__title__container d-block h-50 mt-3">
+                        <span class="team__item__title d-inline-block py-1 px-3 border-radius">전체</span>
+                    </div>
+                </div>
+
+                <div class="team__item col h-100 my-auto px-2 py-3 text-center">
+                    <div class="team__item__logo__conatiner h-50">
+                        <img src="{% static 'images\fan_page\fan_03.png' %}" alt="team__item__logo" class="team__item__logo">
+                    </div>
+                    <div class="team__item__title__container d-block h-50 mt-3">
+                        <span class="team__item__title d-inline-block py-1 px-3 border-radius">NC</span>
+                    </div>
+                </div>
+
+                <div class="team__item col h-100 my-auto px-2 py-3 text-center">
+                    <div class="team__item__logo__conatiner h-50">
+                        <img src="{% static 'images\fan_page\fan_04.png' %}" alt="team__item__logo" class="team__item__logo">
+                    </div>
+                    <div class="team__item__title__container d-block h-50 mt-3">
+                        <span class="team__item__title d-inline-block py-1 px-3 border-radius">두산</span>
+                    </div>
+                </div>
+
+                <div class="team__item col h-100 my-auto px-2 py-3 text-center">
+                    <div class="team__item__logo__conatiner h-50">
+                        <img src="{% static 'images\fan_page\fan_05.png' %}" alt="team__item__logo" class="team__item__logo">
+                    </div>
+                    <div class="team__item__title__container d-block h-50 mt-3">
+                        <span class="team__item__title d-inline-block py-1 px-3 border-radius">KT</span>
+                    </div>
+                </div>
+
+                <div class="team__item col h-100 my-auto px-2 py-3 text-center">
+                    <div class="team__item__logo__conatiner h-50">
+                        <img src="{% static 'images\fan_page\fan_06.png' %}" alt="team__item__logo" class="team__item__logo">
+                    </div>
+                    <div class="team__item__title__container d-block h-50 mt-3">
+                        <span class="team__item__title d-inline-block py-1 px-3 border-radius">LG</span>
+                    </div>
+                </div>
+
+                <div class="team__item col h-100 my-auto px-2 py-3 text-center">
+                    <div class="team__item__logo__conatiner h-50">
+                        <img src="{% static 'images\fan_page\fan_07.png' %}" alt="team__item__logo" class="team__item__logo">
+                    </div>
+                    <div class="team__item__title__container d-block h-50 mt-3">
+                        <span class="team__item__title d-inline-block py-1 px-3 border-radius">키움</span>
+                    </div>
+                </div>
+
+                <div class="team__item col h-100 my-auto px-2 py-3 text-center">
+                    <div class="team__item__logo__conatiner h-50">
+                        <img src="{% static 'images\fan_page\fan_08.png' %}" alt="team__item__logo" class="team__item__logo">
+                    </div>
+                    <div class="team__item__title__container d-block h-50 mt-3">
+                        <span class="team__item__title d-inline-block py-1 px-3 border-radius">KIA</span>
+                    </div>
+                </div>
+
+                <div class="team__item col h-100 my-auto px-2 py-3 text-center">
+                    <div class="team__item__logo__conatiner h-50">
+                        <img src="{% static 'images\fan_page\fan_09.png' %}" alt="team__item__logo" class="team__item__logo">
+                    </div>
+                    <div class="team__item__title__container d-block h-50 mt-3">
+                        <span class="team__item__title d-inline-block py-1 px-3 border-radius">롯데</span>
+                    </div>
+                </div>
+
+                <div class="team__item col h-100 my-auto px-2 py-3 text-center">
+                    <div class="team__item__logo__conatiner h-50">
+                        <img src="{% static 'images\fan_page\fan_10.png' %}" alt="team__item__logo" class="team__item__logo">
+                    </div>
+                    <div class="team__item__title__container d-block h-50 mt-3">
+                        <span class="team__item__title d-inline-block py-1 px-3 border-radius">삼성</span>
+                    </div>
+                </div>
+
+                <div class="team__item col h-100 my-auto px-2 py-3 text-center">
+                    <div class="team__item__logo__conatiner h-50">
+                        <img src="{% static 'images\fan_page\fan_11.png' %}" alt="team__item__logo" class="team__item__logo">
+                    </div>
+                    <div class="team__item__title__container d-block h-50 mt-3">
+                        <span class="team__item__title d-inline-block py-1 px-3 border-radius">SSG</span>
+                    </div>
+                </div>
+
+                <div class="team__item col h-100 my-auto px-2 py-3 text-center">
+                    <div class="team__item__logo__conatiner h-50">
+                        <img src="{% static 'images\fan_page\fan_12.png' %}" alt="team__item__logo" class="team__item__logo">
+                    </div>
+                    <div class="team__item__title__container d-block h-50 mt-3">
+                        <span class="team__item__title d-inline-block py-1 px-3 border-radius">한화</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="position row border-radius shadow mx-0 mt-4 px-3">
+                <div class="position__item__container position__all__container col-4 py-1 px-0">
+                    <span class="position__item position__all d-inline-block py-1 px-3 border-radius">전체</span>
+                </div>
+                <div class="position__item__container position__pitcher__container col-4 py-1 px-0">
+                    <span class="position__item position__pitcher d-inline-block py-1 px-3 border-radius">투수</span>
+                </div>
+                <div class="position__item__container position__batter__container col-4 py-1 px-0">
+                    <span class="position__item position__batter d-inline-block py-1 px-3 border-radius">타자</span>
+                </div>
+            </div>
+
+            <div class="consonants row border-radius shadow mx-0 mt-4 px-3 float-left">
+                <span class="consonants__item consonants__giyeok col py-2">ㄱ</span>
+                <span class="consonants__item consonants__nieum col py-2">ㄴ</span>
+                <span class="consonants__item consonants__diguet col py-2">ㄷ</span>
+                <span class="consonants__item consonants__rieul col py-2">ㄹ</span>
+                <span class="consonants__item consonants__mieum col py-2">ㅁ</span>
+                <span class="consonants__item consonants__bieup col py-2">ㅂ</span>
+                <span class="consonants__item consonants__siot col py-2">ㅅ</span>
+                <span class="consonants__item consonants__ieung col py-2">ㅇ</span>
+                <span class="consonants__item consonants__jieut col py-2">ㅈ</span>
+                <span class="consonants__item consonants__cheiut col py-2">ㅊ</span>
+                <span class="consonants__item consonants__kieuk col py-2">ㅋ</span>
+                <span class="consonants__item consonants__tieut col py-2">ㅌ</span>
+                <span class="consonants__item consonants__pieup col py-2">ㅍ</span>
+                <span class="consonants__item consonants__hieut col py-2">ㅎ</span>
+            </div>
+
+            <div class="input border-radius shadow mx-0 mt-4 float-right">
+                <input type="text" class="input__text border-radius px-3" placeholder="선수명을 입력해주세요." />
+                <button type="button" class="btn input__button">
+                    <img src="{% static 'images\fan_page\fan_14.png' %}" alt="input__button__img" class="input__button__img">
+                </button>
+            </div>
+        </div>
+
+        <div class="bookmark mt-5">
+            <div class="bookmark__header ml-4">
+                <img src="{% static 'images\fan_page\fan_15.png' %}" alt="bookmark__header__img" class="bookmark__header__img">
+                <h3 class="bookmark__header__title d-inline-block ml-2">즐겨찾는 선수</h3>
+            </div>
+
+            <div class="bookmark__contents bookmark__list row justify-content-start mx-0 mt-4">
+                <div class="bookmark__item player__item border-radius shadow col-2 p-0">
+                    <div class="bookmark__item__header player__item__header">
+                        <span class="bookmark__item__header__number player__item__header__number">#21</span>
+                        <span class="bookmark__item__header__name player__item__header__name">강동연</span>
+                        <span class="bookmark__item__header__team player__item__header__team">NC</span>
+                        <img src="{% static 'images\fan_page\fan_16.png' %}" alt="player__item__header__overlay" class="player__item__header__overlay">
+                    </div>
+
+                    <img src="{% static 'images\fan_page\fan_21.png' %}" alt="bookmark__item__img" class="bookmark__item__img player__item__img">
+
+                    <div class="bookmark__item__bookmark_btn__container player__item__bookmark_btn__container m-0 active">
+                        <span class="bookmark__item__bookmark_btn player__item__bookmark_btn active"></span>
+                    </div>
+                </div>
+
+                <div class="bookmark__item player__item border-radius shadow col-2 p-0">
+                    <div class="bookmark__item__header player__item__header">
+                        <span class="bookmark__item__header__number player__item__header__number">#50</span>
+                        <span class="bookmark__item__header__name player__item__header__name">강백호</span>
+                        <span class="bookmark__item__header__team player__item__header__team">KT</span>
+                        <img src="{% static 'images\fan_page\fan_16.png' %}" alt="player__item__header__overlay" class="player__item__header__overlay">
+                    </div>
+
+                    <img src="{% static 'images\fan_page\fan_27.png' %}" alt="bookmark__item__img" class="bookmark__item__img player__item__img">
+
+                    <div class="bookmark__item__bookmark_btn__container player__item__bookmark_btn__container m-0 active">
+                        <span class="bookmark__item__bookmark_btn player__item__bookmark_btn active"></span>
+                    </div>
+                </div>
+
+                <div class="bookmark__item player__item border-radius shadow col-2 p-0">
+                    <div class="bookmark__item__header player__item__header">
+                        <span class="bookmark__item__header__number player__item__header__number">#25</span>
+                        <span class="bookmark__item__header__name player__item__header__name">양의지</span>
+                        <span class="bookmark__item__header__team player__item__header__team">NC</span>
+                        <img src="{% static 'images\fan_page\fan_16.png' %}" alt="player__item__header__overlay" class="player__item__header__overlay">
+                    </div>
+
+                    <img src="{% static 'images\fan_page\fan_21.png' %}" alt="bookmark__item__img" class="bookmark__item__img player__item__img">
+
+                    <div class="bookmark__item__bookmark_btn__container player__item__bookmark_btn__container m-0 active">
+                        <span class="bookmark__item__bookmark_btn player__item__bookmark_btn active"></span>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+
+        <hr class="hr mt-5">
+
+        <div class="players mt-5">
+            <div class="players__contents players__list row justify-content-start mx-0">
+                <div class="player__item border-radius shadow col-2 p-0">
+                    <div class="player__item__header">
+                        <span class="player__item__header__number">#33</span>
+                        <span class="player__item__header__name">가빌리오</span>
+                        <span class="player__item__header__team">SSG</span>
+                        <img src="{% static 'images\fan_page\fan_16.png' %}" alt="player__item__header__overlay" class="player__item__header__overlay">
+                    </div>
+
+                    <img src="{% static 'images\fan_page\fan_20.png' %}" alt="player__item__img" class="player__item__img">
+
+                    <div class="player__item__bookmark_btn__container m-0">
+                        <span class="player__item__bookmark_btn"></span>
+                    </div>
+                </div>
+
+                <div class="player__item border-radius shadow col-2 p-0">
+                    <div class="player__item__header">
+                        <span class="player__item__header__number">#25</span>
+                        <span class="player__item__header__name">강동연</span>
+                        <span class="player__item__header__team">NC</span>
+                        <img src="{% static 'images\fan_page\fan_16.png' %}" alt="player__item__header__overlay" class="player__item__header__overlay">
+                    </div>
+
+                    <img src="{% static 'images\fan_page\fan_21.png' %}" alt="player__item__img" class="player__item__img">
+
+                    <div class="player__item__bookmark_btn__container m-0 active">
+                        <span class="player__item__bookmark_btn active"></span>
+                    </div>
+                </div>
+
+                <div class="player__item border-radius shadow col-2 p-0">
+                    <div class="player__item__header">
+                        <span class="player__item__header__number">#66</span>
+                        <span class="player__item__header__name">강동호</span>
+                        <span class="player__item__header__team">롯데</span>
+                        <img src="{% static 'images\fan_page\fan_16.png' %}" alt="player__item__header__overlay" class="player__item__header__overlay">
+                    </div>
+
+                    <img src="{% static 'images\fan_page\fan_22.png' %}" alt="player__item__img" class="player__item__img">
+
+                    <div class="player__item__bookmark_btn__container m-0">
+                        <span class="player__item__bookmark_btn"></span>
+                    </div>
+                </div>
+
+                <div class="player__item border-radius shadow col-2 p-0">
+                    <div class="player__item__header">
+                        <span class="player__item__header__number">#1</span>
+                        <span class="player__item__header__name">강로한</span>
+                        <span class="player__item__header__team">롯데</span>
+                        <img src="{% static 'images\fan_page\fan_16.png' %}" alt="player__item__header__overlay" class="player__item__header__overlay">
+                    </div>
+
+                    <img src="{% static 'images\fan_page\fan_23.png' %}" alt="player__item__img" class="player__item__img">
+
+                    <div class="player__item__bookmark_btn__container m-0">
+                        <span class="player__item__bookmark_btn"></span>
+                    </div>
+                </div>
+
+                <div class="player__item border-radius shadow col-2 p-0">
+                    <div class="player__item__header">
+                        <span class="player__item__header__number">#105</span>
+                        <span class="player__item__header__name">강 민</span>
+                        <span class="player__item__header__team">LG</span>
+                        <img src="{% static 'images\fan_page\fan_16.png' %}" alt="player__item__header__overlay" class="player__item__header__overlay">
+                    </div>
+
+                    <img src="{% static 'images\fan_page\fan_24.png' %}" alt="player__item__img" class="player__item__img">
+
+                    <div class="player__item__bookmark_btn__container m-0">
+                        <span class="player__item__bookmark_btn"></span>
+                    </div>
+                </div>
+
+                <div class="player__item border-radius shadow col-2 p-0">
+                    <div class="player__item__header">
+                        <span class="player__item__header__number">#76</span>
+                        <span class="player__item__header__name">강민성</span>
+                        <span class="player__item__header__team">롯데</span>
+                        <img src="{% static 'images\fan_page\fan_16.png' %}" alt="player__item__header__overlay" class="player__item__header__overlay">
+                    </div>
+
+                    <img src="{% static 'images\fan_page\fan_25.png' %}" alt="player__item__img" class="player__item__img">
+
+                    <div class="player__item__bookmark_btn__container m-0">
+                        <span class="player__item__bookmark_btn"></span>
+                    </div>
+                </div>
+
+                <div class="player__item border-radius shadow col-2 p-0">
+                    <div class="player__item__header">
+                        <span class="player__item__header__number">#47</span>
+                        <span class="player__item__header__name">강민호</span>
+                        <span class="player__item__header__team">삼성</span>
+                        <img src="{% static 'images\fan_page\fan_16.png' %}" alt="player__item__header__overlay" class="player__item__header__overlay">
+                    </div>
+
+                    <img src="{% static 'images\fan_page\fan_26.png' %}" alt="player__item__img" class="player__item__img">
+
+                    <div class="player__item__bookmark_btn__container m-0">
+                        <span class="player__item__bookmark_btn"></span>
+                    </div>
+                </div>
+
+                <div class="player__item border-radius shadow col-2 p-0">
+                    <div class="player__item__header">
+                        <span class="player__item__header__number">#50</span>
+                        <span class="player__item__header__name">강백호</span>
+                        <span class="player__item__header__team">KT</span>
+                        <img src="{% static 'images\fan_page\fan_16.png' %}" alt="player__item__header__overlay" class="player__item__header__overlay">
+                    </div>
+
+                    <img src="{% static 'images\fan_page\fan_27.png' %}" alt="player__item__img" class="player__item__img">
+
+                    <div class="player__item__bookmark_btn__container m-0 active">
+                        <span class="player__item__bookmark_btn active"></span>
+                    </div>
+                </div>
+
+                <div class="player__item border-radius shadow col-2 p-0">
+                    <div class="player__item__header">
+                        <span class="player__item__header__number">#19</span>
+                        <span class="player__item__header__name">강상원</span>
+                        <span class="player__item__header__team">한화</span>
+                        <img src="{% static 'images\fan_page\fan_16.png' %}" alt="player__item__header__overlay" class="player__item__header__overlay">
+                    </div>
+
+                    <img src="{% static 'images\fan_page\fan_28.png' %}" alt="player__item__img" class="player__item__img">
+
+                    <div class="player__item__bookmark_btn__container m-0">
+                        <span class="player__item__bookmark_btn"></span>
+                    </div>
+                </div>
+
+                <div class="player__item border-radius shadow col-2 p-0">
+                    <div class="player__item__header">
+                        <span class="player__item__header__number">#25</span>
+                        <span class="player__item__header__name">강승호</span>
+                        <span class="player__item__header__team">두산</span>
+                        <img src="{% static 'images\fan_page\fan_16.png' %}" alt="player__item__header__overlay" class="player__item__header__overlay">
+                    </div>
+
+                    <img src="{% static 'images\fan_page\fan_29.png' %}" alt="player__item__img" class="player__item__img">
+
+                    <div class="player__item__bookmark_btn__container m-0">
+                        <span class="player__item__bookmark_btn"></span>
+                    </div>
+                </div>
+
+                <div class="player__item border-radius shadow col-2 p-0">
+                    <div class="player__item__header">
+                        <span class="player__item__header__number">#65</span>
+                        <span class="player__item__header__name">강윤구</span>
+                        <span class="player__item__header__team">롯데</span>
+                        <img src="{% static 'images\fan_page\fan_16.png' %}" alt="player__item__header__overlay" class="player__item__header__overlay">
+                    </div>
+
+                    <img src="{% static 'images\fan_page\fan_30.png' %}" alt="player__item__img" class="player__item__img">
+
+                    <div class="player__item__bookmark_btn__container m-0">
+                        <span class="player__item__bookmark_btn"></span>
+                    </div>
+                </div>
+
+                <div class="player__item border-radius shadow col-2 p-0">
+                    <div class="player__item__header">
+                        <span class="player__item__header__number">#27</span>
+                        <span class="player__item__header__name">강이준</span>
+                        <span class="player__item__header__team">KIA</span>
+                        <img src="{% static 'images\fan_page\fan_16.png' %}" alt="player__item__header__overlay" class="player__item__header__overlay">
+                    </div>
+
+                    <img src="{% static 'images\fan_page\fan_31.png' %}" alt="player__item__img" class="player__item__img">
+
+                    <div class="player__item__bookmark_btn__container m-0">
+                        <span class="player__item__bookmark_btn"></span>
+                    </div>
+                </div>
+
+                <div class="player__item border-radius shadow col-2 p-0">
+                    <div class="player__item__header">
+                        <span class="player__item__header__number">#55</span>
+                        <span class="player__item__header__name">강재민</span>
+                        <span class="player__item__header__team">한화</span>
+                        <img src="{% static 'images\fan_page\fan_16.png' %}" alt="player__item__header__overlay" class="player__item__header__overlay">
+                    </div>
+
+                    <img src="{% static 'images\fan_page\fan_32.png' %}" alt="player__item__img" class="player__item__img">
+
+                    <div class="player__item__bookmark_btn__container m-0">
+                        <span class="player__item__bookmark_btn"></span>
+                    </div>
+                </div>
+
+                <div class="player__item border-radius shadow col-2 p-0">
+                    <div class="player__item__header">
+                        <span class="player__item__header__number">#49</span>
+                        <span class="player__item__header__name">강진성</span>
+                        <span class="player__item__header__team">NC</span>
+                        <img src="{% static 'images\fan_page\fan_16.png' %}" alt="player__item__header__overlay" class="player__item__header__overlay">
+                    </div>
+
+                    <img src="{% static 'images\fan_page\fan_33.png' %}" alt="player__item__img" class="player__item__img">
+
+                    <div class="player__item__bookmark_btn__container m-0">
+                        <span class="player__item__bookmark_btn"></span>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="players__more mt-5">
+                <span class="players__more__text d-block">더보기</span>
+                <img src="{% static 'images\fan_page\fan_35.png' %}" alt="players__more__btn" class="players__more__btn mt-3">
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %} {% block script %}
+<!-- page control -->
+{% comment %}
+<script src="{% static 'js\controlActionLivePage.js' %}"></script> {% endcomment %} {% endblock script %}

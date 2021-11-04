@@ -1,0 +1,322 @@
+@import url(base_generic.css);
+
+/* contents */
+
+.contents {}
+
+.contents__title {
+    font-size: 30px;
+    font-weight: bold;
+    color: #666666;
+}
+
+
+/* search */
+
+.search {
+    background-color: #EDEDED;
+    padding: 30px 80px;
+}
+
+
+/* team__list */
+
+.team__list {
+    background-color: white;
+}
+
+.team__item {
+    position: relative;
+    cursor: pointer;
+}
+
+.team__item:after {
+    content: '';
+    height: 70%;
+    width: 1px;
+    position: absolute;
+    right: 0;
+    top: 15%;
+    background-color: #cccccc;
+}
+
+.team__item:last-child::after {
+    display: none;
+}
+
+.team__item__logo__conatiner {
+    min-height: 40px;
+    max-height: 40px;
+    line-height: 2.5;
+}
+
+.team__item__logo {
+    width: 50px;
+    height: auto;
+}
+
+.team__item:first-child .team__item__logo {
+    width: 40px;
+    height: auto;
+}
+
+.team__item__title__container {}
+
+.team__item__title {
+    color: #666666;
+}
+
+.team__item:first-child .team__item__title {
+    background-color: #666666;
+    color: white;
+}
+
+
+/* position */
+
+.position {
+    background-color: white;
+    width: 300px;
+    text-align: center;
+}
+
+.position__item__container {
+    position: relative;
+}
+
+.position__item__container:after {
+    content: '';
+    height: 60%;
+    width: 1px;
+    position: absolute;
+    right: 0;
+    top: 20%;
+    background-color: #cccccc;
+}
+
+.position__item__container:last-child::after {
+    display: none;
+}
+
+.position__item {
+    cursor: pointer;
+}
+
+.position__all {
+    background-color: #666666;
+    color: white;
+}
+
+
+/* consonants */
+
+.consonants {
+    width: 700px;
+    background-color: white;
+    text-align: center;
+}
+
+.consonants__item {
+    position: relative;
+    font-size: 18px;
+}
+
+.consonants__item:after {
+    content: '';
+    height: 60%;
+    width: 1px;
+    position: absolute;
+    right: 0;
+    top: 20%;
+    background-color: #cccccc;
+}
+
+.consonants__item:last-child {}
+
+
+/* input */
+
+.input {
+    width: 300px;
+    background-image: url("/static/images/fan_page/fan_13.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.input__text {
+    border: none;
+    width: 240px;
+    height: 30px;
+    margin: 5px 0 0 5px;
+    font-size: 14px;
+}
+
+.input__button {}
+
+.input__button__img {
+    width: 20px;
+    vertical-align: top;
+}
+
+.search::after {
+    display: block;
+    content: '';
+    clear: both;
+}
+
+
+/* bookmark */
+
+.bookmark {}
+
+.bookmark__header {}
+
+.bookmark__header__img {
+    width: 9px;
+}
+
+.bookmark__header__title {
+    font-size: 24px;
+    color: #4D4D4D;
+    vertical-align: middle;
+}
+
+.bookmark__contents {}
+
+.bookmark__list {
+    /* flex-flow: row wrap; */
+    gap: 37px;
+}
+
+.players__list {
+    gap: 37px;
+}
+
+.bookmark__item {
+    position: relative;
+    /* width: 210px; */
+    height: 210px;
+    flex: 0 0 17.53%;
+    max-width: 17.53%;
+}
+
+.player__item {
+    position: relative;
+    /* width: 210px; */
+    height: 210px;
+    flex: 0 0 17.53%;
+    max-width: 17.53%;
+}
+
+
+/* .player__item__header {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 15%;
+    background-image: url('/static/images/fan_page/fan_16.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+} */
+
+.player__item__header {
+    position: relative;
+    top: 13px;
+    left: 13px;
+    width: 90%;
+    height: 15%;
+    z-index: 10;
+}
+
+.player__item__header__number {
+    position: absolute;
+    top: 7px;
+    left: 6px;
+    font-size: 14px;
+    color: white;
+    z-index: 10;
+}
+
+.player__item__header__name {
+    position: absolute;
+    top: 3px;
+    right: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #4D4D4D;
+    z-index: 10;
+}
+
+.player__item__header__team {
+    position: absolute;
+    right: 10px;
+    top: 35px;
+    font-size: 14px;
+    color: #808080;
+    z-index: 10;
+}
+
+.player__item__header__overlay {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 80%;
+}
+
+.player__item__img {
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.player__item__bookmark_btn__container {
+    position: absolute;
+    bottom: 13px;
+    right: 13px;
+    /* width: 15%; */
+    /* height: 80%; */
+    width: 17%;
+    height: 72%;
+    z-index: 0;
+}
+
+.player__item__bookmark_btn__container.active {
+    background-image: url('/static/images/fan_page/fan_17.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.player__item__bookmark_btn {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 35px;
+    background-image: url('/static/images/fan_page/fan_19.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.player__item__bookmark_btn.active {
+    background-image: url('/static/images/fan_page/fan_18.png');
+}
+
+
+/* players */
+
+.players {
+    /* players는 일단 bookmark 영역과 같은 코드로 적용 */
+}
+
+.players__more {
+    text-align: center;
+}
+
+.players__more__text {
+    font-size: 20px;
+    color: #808080;
+}
+
+.players__more__btn {
+    width: 40px;
+}

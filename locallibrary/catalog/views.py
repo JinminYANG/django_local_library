@@ -165,3 +165,7 @@ def action_live(request):
     # 컨텍스트 변수의 데이터로 HTML 템플릿 index.html을 렌더링합니다.
     # HTML 페이지를 생성하고 이 페이지를 응답으로서 반환하기 위해 render() 함수를 호출합니다.
     return render(request, 'action_live.html', context=context)
+
+
+def fan_page(request):
+    return render(request, 'fan_page.html')
