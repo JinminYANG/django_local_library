@@ -33,24 +33,113 @@
 
 /* streaming */
 
-.streaming {}
+.streaming {
+    width: 800px;
+}
 
-.streaming__item {}
+.streaming__item {
+    position: relative;
+    width: 100%;
+    line-height: 0;
+    overflow: hidden;
+}
 
 .streaming__item__img {
     width: 100%;
 }
 
-.streaming__item__overlay {
+.streaming__item__video {
     width: 100%;
-    position: absolute;
-    top: 0;
 }
 
-.streaming__item__overlay__img {
+.player-controls {
+    display: flex;
+    position: absolute;
+    bottom: 0;
     width: 100%;
-    top: 0;
-    left: 0;
+    transform: translateY(100%);
+    transition: 0.3s;
+    flex-wrap: wrap;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.streaming__item:hover .player-controls {
+    transform: translateY(0);
+}
+
+.play-button {
+    width: 10%;
+    border: none;
+    background: black;
+    color: white;
+}
+
+.play-button:focus {
+    outline: none;
+}
+
+.play-button__icon {
+    display: inline-block;
+    width: 100%;
+}
+
+.volume {}
+
+.time {
+    font-size: 1em;
+    color: white;
+    width: 15%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+input[type='range'] {
+    -webkit-appearance: none;
+    background: transparent;
+    margin: 0;
+    width: 75%;
+    padding: 0 10px;
+}
+
+input[type='range']:focus {
+    outline: none;
+}
+
+input[type='range']::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 15px;
+    margin-top: 2.5px;
+    cursor: pointer;
+    background: black;
+}
+
+input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 10px;
+    height: 15px;
+    background: #FE7926;
+    cursor: pointer;
+}
+
+.video-progress {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 5px;
+    transition: 0.3s;
+    background: rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+}
+
+.video-progress-filled {
+    width: 0%;
+    background: #FE7926;
+}
+
+.streaming__item:hover .video-progress {
+    height: 10px;
 }
 
 .streaming__textbox {}
@@ -117,13 +206,12 @@
     font-size: 14px;
 }
 
-.streaming__bottom {
-    color: var(--action_live-text-fourth);
-}
+.streaming__bottom {}
 
 .streaming__bottom__item {
     vertical-align: middle;
     cursor: pointer;
+    color: var(--action_live-text-fourth);
     transition: all 0.3s;
 }
 
@@ -149,14 +237,15 @@
 }
 
 .streaming__bottom__item__text {
-    font-size: 12px;
+    font-size: 14px;
 }
 
 .streaming__bottom__share__box {
     background-image: url("/static/images/action_live/sec1_05.png");
 }
 
-.streaming__bottom__share.active .streaming__bottom__share__box {
+.streaming__bottom__share.active .streaming__bottom__share__text {
+    color: var(--action_live-text-fourth);
     /* background-image: url("/static/images/action_live/sec1_06.png"); */
 }
 
@@ -341,27 +430,104 @@
     cursor: pointer;
 }
 
+
+/* new login modal */
+
+.login__modal__container {}
+
+.share_modal {}
+
+.modal-dialog {
+    margin: 5rem auto !important;
+}
+
+.share_modal__list {
+    row-gap: 30px;
+}
+
+.share_modal__item {
+    font-size: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+    color: #666666;
+}
+
+.share_modal__facebook:hover {
+    color: #1877F2;
+}
+
+.share_modal__github:hover {
+    color: #00405d;
+}
+
+.share_modal__google:hover {
+    color: #db4437;
+}
+
+.share_modal__instagram:hover {
+    color: #E4405F;
+}
+
+.share_modal__line:hover {
+    color: #00C300;
+}
+
+.share_modal__messenger:hover {
+    color: #0099FF;
+}
+
+.share_modal__slack:hover {
+    color: #3AAF85;
+}
+
+.share_modal__twitter:hover {
+    color: #1DA1F2;
+}
+
+.share_modal__link__text {
+    width: 90%;
+    font-size: 14px;
+    vertical-align: middle;
+}
+
+.share_modal__link__btn {}
+
+.share_modal__link__btn__icon {
+    font-size: 22px;
+    cursor: pointer;
+    line-height: 1;
+}
+
+
+/* 기획 버전 login modal */
+
+
+/* 
 .login__modal__container {
     position: absolute;
     padding-right: 0;
     transition: all 0.3s linear;
-}
+} */
 
-.login__modal__container.show+.login__modal__backdrop {
+
+/* .login__modal__container.show+.login__modal__backdrop {
     display: block;
     z-index: 100;
     opacity: 0.5 !important;
     visibility: visible;
     transition: all 0.3s linear;
-}
+} */
 
-.login__modal__box {
+
+/* .login__modal__box {
     width: fit-content;
     margin: 0 auto;
     top: 50%;
     transform: translateY(-50%) !important;
-}
+} */
 
+
+/* 
 .login__modal__contents {
     width: 180px;
     height: 84px;
@@ -386,13 +552,16 @@
 
 .login__modal__no {
     background-color: var(--chatting-input-bg);
-}
+} */
 
+
+/* 
 .modal-backdrop:not(.login__modal__backdrop) {
     display: none !important;
-}
+} */
 
-.login__modal__backdrop {
+
+/* .login__modal__backdrop {
     position: absolute;
     top: 0;
     left: 0;
@@ -402,18 +571,20 @@
     background-color: var(--black);
     visibility: hidden;
     transition: all 0.3s linear;
-}
+} */
 
-.modal-backdrop.show {
+
+/* .modal-backdrop.show {
     display: block;
     z-index: 100;
     opacity: 0.5 !important;
-}
+} */
 
-.modal-open {
+
+/* .modal-open {
     padding-right: 0px !important;
     overflow: auto;
-}
+} */
 
 
 /* side */

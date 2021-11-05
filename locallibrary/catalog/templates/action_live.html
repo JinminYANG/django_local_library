@@ -1,14 +1,7 @@
-{% extends "base_generic.html"%} 
-{% load static %} 
-
-{% block css %}
-<link href="{% static 'css/action_live.css' %}" rel="stylesheet"/>
+{% extends "base_generic.html"%} {% load static %} {% block css %}
+<link href="{% static 'css/action_live.css' %}" rel="stylesheet" />
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" />
-<link href="{% static 'emoji/css/emoji.css' %}" rel="stylesheet" />
-
-{% endblock css %} 
-
-{% block content %}
+<link href="{% static 'emoji/css/emoji.css' %}" rel="stylesheet" /> {% endblock css %} {% block content %}
 
 <div class="container container-md container-sm p-0 pt-4">
     <div class="row contents justify-content-between m-0">
@@ -17,12 +10,30 @@
 
             <article class="streaming border-radius shadow">
 
-                <div class="streaming__item border-radius">
-                    <img src="{% static 'images\action_live\sec1_99.png' %}" class="streaming__item__img border-radius" />
-                </div>
+                <div class="streaming__item border-radius video-player">
 
-                <div class="streaming__item__overlay border-radius">
-                    <img src="{% static 'images\main\images\sec1_02.png' %}" class="streaming__item__overlay__img">
+                    <video src="{% static 'videos\Kang_Baek-Ho.mp4' %}" class="streaming__item__video video" type="video/mp4" preload="auto"></video>
+
+                    <!-- test video -->
+                    <!-- <video src="{% static 'videos\seoul.mp4' %}" class="streaming__item__video video" type="video/mp4"></video> -->
+
+                    <div class="player-controls">
+
+                        <div class="video-progress">
+                            <div class="video-progress-filled"></div>
+                        </div>
+
+                        <button class="play-button p-0" title="Play">
+                            <i class="bi bi-play-fill play-button__icon"></i>
+                        </button>
+
+                        <input type="range" class="volume" min="0" max="1" step="0.01" value="1">
+
+                        <div class="time">
+                            <span class="current">0:00</span> / <span class="duration">0:00</span>
+                        </div>
+
+                    </div>
                 </div>
 
                 <div class="streaming__textbox p-3">
@@ -54,20 +65,57 @@
                     </div>
 
                     <div class="streaming__bottom mt-4 ml-5">
-                        <div class="streaming__bottom__item streaming__bottom__like d-inline-block mr-4">
+                        <button type="button" class="btn streaming__bottom__item streaming__bottom__like d-inline-block">
                             <span class="streaming__bottom__item__box streaming__bottom__like__box mr-1"></span>
                             <span class="streaming__bottom__item__text streaming__bottom__like__text">좋아요</span>
-                        </div>
+                        </button>
 
-                        <div class="streaming__bottom__item streaming__bottom__share d-inline-block mr-4">
+                        <button type="button" class="btn streaming__bottom__item streaming__bottom__share d-inline-block" data-toggle="modal" data-target="#shareModal">
                             <span class="streaming__bottom__item__box streaming__bottom__share__box mr-1"></span>
                             <span class="streaming__bottom__item__text streaming__bottom__share__text">공유하기</span>
-                        </div>
+                        </button>
 
-                        <div class="streaming__bottom__item streaming__bottom__add_to_playlist d-inline-block">
+                        <button type="button" class="btn streaming__bottom__item streaming__bottom__add_to_playlist d-inline-block">
                             <span class="streaming__bottom__item__box streaming__bottom__add_to_playlist__box mr-1"></span>
                             <span class="streaming__bottom__item__text streaming__bottom__add_to_playlist__text">재생목록에 추가</span>
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade share_modal" id="shareModal" tabindex="-1" aria-labelledby="shareModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content share_modal__content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title share_modal__title" id="shareModalLabel">공유하기</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body share_modal__body">
+                                        <div class="share_modal__list row row-cols-4 text-center">
+                                            <a href="" target="_blank" class="share_modal__item share_modal__facebook"><i class="bi bi-facebook"></i></a>
+                                            <a href="" target="_blank" class="share_modal__item share_modal__github"><i class="bi bi-github"></i></a>
+                                            <a href="" target="_blank" class="share_modal__item share_modal__google"><i class="bi bi-google"></i></a>
+                                            <a href="" target="_blank" class="share_modal__item share_modal__instagram"><i class="bi bi-instagram"></i></a>
+                                            <a href="" target="_blank" class="share_modal__item share_modal__line"><i class="bi bi-line"></i></a>
+                                            <a href="" target="_blank" class="share_modal__item share_modal__messenger"><i class="bi bi-messenger"></i></a>
+                                            <a href="" target="_blank" class="share_modal__item share_modal__slack"><i class="bi bi-slack"></i></a>
+                                            <a href="" target="_blank" class="share_modal__item share_modal__twitter"><i class="bi bi-twitter"></i></a>
+                                        </div>
+
+                                        <hr>
+
+                                        <div class="share_modal__link">
+                                            <input type="text" value="https://wwww.actionsports.co.kr/action_live/as65das4dsa6as4dsa74d6" disabled class="share_modal__link__text">
+                                            <button type="button" class="btn share_modal__link__btn p-0 ml-1"><i class="bi bi-stickies share_modal__link__btn__icon d-block"></i></button>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
                         </div>
+
+
                     </div>
                 </div>
             </article>
@@ -104,7 +152,7 @@
                             <div class="chatting__item__box d-inline-block">
                                 <span class="chatting__item__box__user__text d-block p-2 px-3 m-1">실시간 생중계 잘 보고 있습니다 재미있어요~!</span>
                                 <span class="chatting__item__box__user__text d-inline-block p-2 px-3 m-1">오늘 경기력이 대단하네요!</span>
-                            </div> 
+                            </div>
                         </div>
 
                         <div class="chatting__item mb-1">
@@ -116,7 +164,7 @@
                             <div class="chatting__item__box d-inline-block">
                                 <span class="chatting__item__box__user__text d-block p-2 px-3 m-1">실시간 생중계 잘 보고 있습니다 재미있어요~!</span>
                                 <span class="chatting__item__box__user__text d-inline-block p-2 px-3 m-1">오늘 경기력이 대단하네요!</span>
-                            </div> 
+                            </div>
                         </div>
 
                         <div class="chatting__item mb-1">
@@ -146,7 +194,7 @@
                             <div class="my_chatting__item__box d-inline-block">
                                 <span class="my_chatting__item__box__text d-block p-2 px-3 m-1">실시간 생중계 잘 보고 있습니다 재미있어요~!</span>
                             </div>
-                            
+
                             <div class="my_chatting__item__header d-inline-block w-25">
                                 <h3 class="my_chatting__item__header__user__id d-inline-block">Actionsports2021</h3>
                                 <img src="{% static 'images\action_live\sec2_04.png' %}" alt="chatting__user__01__icon" class="chatting__item__header__user__icon">
@@ -155,23 +203,23 @@
 
                     </div>
 
-                    <div class="chatting__input px-5 mt-3" >
+                    <div class="chatting__input px-5 mt-3">
                         <p class="lead emoji-picker-container chatting__input__container d-inline-block mb-0 ">
                             <textarea type="textbox" data-emoji-input="unicode" class="form-control chatting__input__text" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 서비스 이용에 재재를 받을 수 있습니다." data-emojiable="true"></textarea>
-                        </p>      
-                        <a class="chatting__input__registration d-inline-block ml-2" data-toggle="modal" data-target="#chatModal">
+                        </p>
+                        <button class="btn chatting__input__registration d-inline-block ml-2 p-0" data-toggle="modal" data-target="#chatModal">
                             <img src="{% static 'images\action_live\sec2_10.png' %}" alt="chatting__input__registration__img" class="chatting__input__registration__img" />
-                        </a>
+                        </button>
                     </div>
 
                     <!-- Modal -->
                     <div class="modal fade login__modal__container" id="chatModal" tabindex="-1" aria-labelledby="chatModalLabel" aria-hidden="true">
                         <div class="modal-dialog login__modal__box modal-sm">
                             <div class="modal-content login__modal__contents border-radius">
-                                <div class="modal-body login__modal__contents__text pb-0 pt-2">
+                                <div class="modal-body login__modal__contents__text text-center">
                                     로그인이 필요한 <br> 서비스 입니다.
                                 </div>
-                                <div class="modal-footer login__modal__btns justify-content-center pt-0">
+                                <div class="modal-footer login__modal__btns justify-content-center">
                                     <button type="button" class="btn btn-secondary login__modal__yes border-radius px-2 py-1">로그인</button>
                                     <button type="button" class="btn btn-light login__modal__no border-radius px-2 py-1" data-dismiss="modal">닫기</button>
                                 </div>
@@ -179,7 +227,7 @@
                         </div>
                     </div>
 
-                     <div class="modal-backdrop fade login__modal__backdrop border-radius"></div>
+                    <!-- <div class="modal-backdrop fade login__modal__backdrop border-radius"></div> -->
                 </div>
 
             </div>
@@ -305,7 +353,7 @@
 
                         <div class="setting__list__right col-6 pl-2 pr-0">
                             <h3 class="setting__list__title match_prediction mb-2">승부예측</h3>
-                            
+
                             <div class="setting__item match_prediction__left_handed_pitcher ">
                                 <label for="match_prediction__left_handed_pitcher__btn" class="setting__item__label match_prediction__left_handed_pitcher__btn__label ">좌투수상대기록</label>
                                 <input type="checkbox" name="match_prediction__left_handed_pitcher__btn" id="match_prediction__left_handed_pitcher__btn" class="setting__item__btn match_prediction__left_handed_pitcher__btn float-right">
@@ -445,7 +493,7 @@
                                 <span class="stats__record__item__title stats__record__plate_appearances__title d-block mx-2 my-1">타석</span>
                                 <span class="stats__record__item__point stats__record__plate_appearances__point d-block mx-2 my-1">339</span>
                             </div>
-                            
+
 
                             <div class="stats__record__item stats__record__at_bats col-4 p-0">
                                 <span class="stats__record__item__title stats__record__at_bats__title d-block mx-2 my-1">타수</span>
@@ -460,7 +508,7 @@
                             <div class="stats__record__item stats__record__hits col-4 p-0">
                                 <span class="stats__record__item__title stats__record__hits__title d-block mx-2 my-1">안타</span>
                                 <span class="stats__record__item__point stats__record__hits__point d-block mx-2 my-1">95</span>
-                            </div>       
+                            </div>
 
 
                             <div class="stats__record__item stats__record__doubles col-4 p-0">
@@ -476,7 +524,7 @@
                             <div class="stats__record__item stats__record__home_runs col-4 p-0">
                                 <span class="stats__record__item__title stats__record__home_runs__title d-block mx-2 my-1">홈런</span>
                                 <span class="stats__record__item__point stats__record__home_runs__point d-block mx-2 my-1">10</span>
-                            </div>                   
+                            </div>
 
 
                             <div class="stats__record__item stats__record__runs_batted_in col-4 p-0">
@@ -492,7 +540,7 @@
                             <div class="stats__record__item stats__record__caught_stealing col-4 p-0">
                                 <span class="stats__record__item__title stats__record__caught_stealing__title d-block mx-2 my-1">도실</span>
                                 <span class="stats__record__item__point stats__record__caught_stealing__point d-block mx-2 my-1">4</span>
-                            </div>       
+                            </div>
                         </div>
                     </div>
 
@@ -515,9 +563,7 @@
     </div>
 </div>
 
-{% endblock content %}
-
-{% block script %}
+{% endblock content %} {% block script %}
 <!-- page control -->
 <script src="{% static 'js\controlActionLivePage.js' %}"></script>
 
