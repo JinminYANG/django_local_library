@@ -14,26 +14,50 @@
 
                     <video src="{% static 'videos\Kang_Baek-Ho.mp4' %}" class="streaming__item__video video" type="video/mp4" preload="auto"></video>
 
-                    <!-- test video -->
-                    <!-- <video src="{% static 'videos\seoul.mp4' %}" class="streaming__item__video video" type="video/mp4"></video> -->
+                    <div class="player-controls row justify-content-between m-0">
+                        <div class="player-controls-left ml-3">
+                            <button class="play_button p-0 mx-2" title="play">
+                                <i class="bi bi-play-fill play_button__icon"></i>
+                            </button>
 
-                    <div class="player-controls">
+                            <button class="volume_button p-0 mx-2">
+                                <i class="bi bi-volume-down volume_button__icon"></i>
+                            </button>
 
-                        <div class="video-progress">
-                            <div class="video-progress-filled"></div>
+                            <div class="volume__control__container">
+                                <input type="range" class="volume__control" min="0" max="1" step="0.01" value="1">
+                            </div>
+
                         </div>
 
-                        <button class="play-button p-0" title="Play">
-                            <i class="bi bi-play-fill play-button__icon"></i>
+                        <div class="player-controls-right mr-3">
+                            <button class="setting_button p-0 mx-2">
+                                <i class="bi bi-gear-fill setting_button__icon"></i>
+                            </button>
+
+                            <button class="full_content_button p-0 mx-2">
+                                <i class="bi bi-view-list full_content_button__icon"></i>
+                            </button>
+
+                            <button class="full_screen_button p-0 mx-2">
+                                <i class="bi bi-aspect-ratio full_screen_button__icon"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="preferences">
+                        <button class="preferences__item resolution p-2 my-1">
+                            <span class="preferences__item__title resolution__title ml-1">해상도</span>
+                            <span class="preferences__item__text resolution__text">자동 720p <i class="bi bi-chevron-right preferences__item__icon"></i></span>
                         </button>
 
-                        <input type="range" class="volume" min="0" max="1" step="0.01" value="1">
-
-                        <div class="time">
-                            <span class="current">0:00</span> / <span class="duration">0:00</span>
-                        </div>
-
+                        <button class="preferences__item playback_speed p-2 my-1">
+                            <span class="preferences__item__title playback_speed__title ml-1">재생속도</span>
+                            <span class="preferences__item__text playback_speed__text">1.0x <i class="bi bi-chevron-right preferences__item__icon"></i></span>
+                        </button>
                     </div>
+
+                    <i class="bi bi-x streaming__item__close"></i>
                 </div>
 
                 <div class="streaming__textbox p-3">

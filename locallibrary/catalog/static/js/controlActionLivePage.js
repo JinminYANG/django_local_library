@@ -98,12 +98,82 @@ Array.from(statsBtnItem).forEach((button) => {
 // streaming controls
 const videoPlayer = document.querySelector(".streaming__item")
 const video = videoPlayer.querySelector(".streaming__item__video")
-const playButton = videoPlayer.querySelector('.play-button')
-const volume = videoPlayer.querySelector('.volume')
+const playButton = videoPlayer.querySelector('.play_button')
+const volume = videoPlayer.querySelector('.volume__control')
 const currentTimeElement = videoPlayer.querySelector('.current')
 const durationTimeElement = videoPlayer.querySelector('.duration')
 const progress = videoPlayer.querySelector('.video-progress')
 const progressBar = videoPlayer.querySelector('.video-progress-filled')
+
+// new
+// preferences
+const settingButton = videoPlayer.querySelector(".setting_button")
+const preferences = videoPlayer.querySelector(".preferences");
+settingButton.addEventListener("click", (e) => {
+    if (preferences.classList.contains("active")) {
+        preferences.classList.remove("active");
+    } else {
+        preferences.classList.add("active");
+    }
+})
+
+// full screen
+const fullScreenButton = videoPlayer.querySelector(".full_screen_button");
+
+fullScreenButton.addEventListener("click", (e) => {
+    toggleFullScreen()
+})
+
+function isFullScreen() {
+    return (document.fullScreenElement && document.fullScreenElement !== null) ||
+        (document.msFullscreenElement && document.msFullscreenElement !== null) ||
+        (document.mozFullScreen || document.webkitIsFullScreen);
+}
+
+function enterFullScreen() {
+    const page = videoPlayer
+    if (page.requestFullscreen) {
+        page.requestFullscreen();
+        // page.classList.add("active");
+        toggleActive(page);
+    } else if (page.mozRequestFullScreen) page.mozRequestFullScreen();
+    else if (page.msRequestFullscreen) page.msRequestFullscreen();
+    else if (page.webkitRequestFullScreen) page.webkitRequestFullScreen();
+}
+
+function exitFullScreen() {
+    if (document.exitFullScreen) {
+        toggleActive(videoPlayer);
+        return document.exitFullScreen();
+    } else if (document.webkitExitFullscreen) {
+        toggleActive(videoPlayer);
+        return document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) {
+        toggleActive(videoPlayer);
+        return document.msExitFullscreen();
+    } else if (document.mozCancelFullScreen) {
+        toggleActive(videoPlayer);
+        return document.mozCancelFullScreen();
+    }
+}
+
+function toggleFullScreen() {
+    if (!isFullScreen()) {
+        enterFullScreen();
+    } else {
+        exitFullScreen();
+    }
+}
+
+
+const videoPlayerCloseButton = videoPlayer.querySelector(".streaming__item__close")
+
+videoPlayerCloseButton.addEventListener("click", (e) => {
+    if (document.exitFullscreen) {
+        document.exitFullscreen();
+        videoPlayer.classList.remove("active");
+    }
+})
 
 
 // Play and Pause button
@@ -117,39 +187,40 @@ playButton.addEventListener('click', (e) => {
     }
 })
 
+video.addEventListener("click", (e) => {
+    if (video.paused) {
+        video.play();
+        playButton.children[0].classList.replace("bi-play-fill", "bi-pause-fill");
+    } else {
+        video.pause();
+        playButton.children[0].classList.replace("bi-pause-fill", "bi-play-fill")
+    }
+})
+
+
 //volume
 volume.addEventListener('mousemove', (e) => {
     video.volume = e.target.value
 })
 
-//current time and duration
-const currentTime = () => {
-    let currentMinutes = Math.floor(video.currentTime / 60)
-    let currentSeconds = Math.floor(video.currentTime - currentMinutes * 60)
-    let durationMinutes = Math.floor(video.duration / 60)
-    let durationSeconds = Math.floor(video.duration - durationMinutes * 60)
+const volumeControl = document.querySelector(".volume__control");
 
-    currentTimeElement.innerHTML = `${currentMinutes}:${currentSeconds < 10 ? '0'+currentSeconds : currentSeconds}`
-    durationTimeElement.innerHTML = `${durationMinutes}:${durationSeconds}`
+function setBackgroundSize(volumeControl) {
+    volumeControl.style.setProperty("--background-size", `${getBackgroundSize(volumeControl)}%`);
 }
-video.addEventListener('timeupdate', currentTime)
 
-//Progress bar
-video.addEventListener('timeupdate', () => {
-    const percentage = (video.currentTime / video.duration) * 100
-    progressBar.style.width = `${percentage}%`
-})
+setBackgroundSize(volumeControl);
 
-//change progress bar on click
-progress.addEventListener('click', (e) => {
-    // click event video load error
-    const progressTime = (e.offsetX / progress.offsetWidth) * video.duration
-    video.currentTime = progressTime
-})
+volumeControl.addEventListener("input", () => setBackgroundSize(volumeControl));
 
+function getBackgroundSize(volumeControl) {
+    const min = +volumeControl.min || 0;
+    const max = +volumeControl.max || 100;
+    const value = +volumeControl.value;
+    const size = (value - min) / (max - min) * 100;
 
-
-
+    return size;
+}
 
 // share link copy icon
 
@@ -168,3 +239,31 @@ copyIcon.addEventListener('click', (e) => {
         copyIcon.classList.replace("bi-stickies-fill", "bi-stickies")
     }, 5000);
 });
+
+
+// volume control
+const volumeButton = document.querySelector(".volume_button")
+const leftSideControls = document.querySelector(".player-controls-left")
+const volumePanel = document.querySelector('.volume__control__container');
+
+volumeButton.addEventListener("mouseenter", () => {
+    volumeControl.classList.add("active")
+})
+
+leftSideControls.addEventListener('mouseleave', () => {
+    volumeControl.classList.remove("active")
+})
+
+volumeButton.addEventListener("click", () => {
+    if (video.muted) {
+        video.muted = false;
+        volumeButton.children[0].classList.replace("bi-volume-down", "bi-volume-mute")
+        volumeControl.style.setProperty("--background-size", `0%`);
+        volumeControl.setAttribute("value", "0")
+    } else {
+        video.muted = true;
+        volumeButton.children[0].classList.replace("bi-volume-mute", "bi-volume-down")
+        volumeControl.style.setProperty("--background-size", `100%`);
+        volumeControl.setAttribute("value", "1")
+    }
+})
